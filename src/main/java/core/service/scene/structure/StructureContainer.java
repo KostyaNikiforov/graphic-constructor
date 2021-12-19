@@ -1,7 +1,7 @@
 package core.service.scene.structure;
 
-import java.util.List;
 import core.model.Structure;
+import java.util.List;
 
 public interface StructureContainer {
     List<Structure> getAllStructures();

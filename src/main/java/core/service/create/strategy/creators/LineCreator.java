@@ -1,9 +1,9 @@
 package core.service.create.strategy.creators;
 
-import java.awt.Point;
 import core.App;
 import core.model.Line;
 import core.utils.MathFunctions;
+import java.awt.Point;
 
 public class LineCreator implements StructureCreator {
     @Override

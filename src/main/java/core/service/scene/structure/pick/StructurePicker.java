@@ -1,8 +1,8 @@
 package core.service.scene.structure.pick;
 
+import core.model.Structure;
 import java.awt.Graphics2D;
 import java.awt.Point;
-import core.model.Structure;
 
 public interface StructurePicker {
     int squareSideSize = 6;

@@ -1,7 +1,7 @@
 package core.service.scene;
 
-import java.awt.Point;
 import core.model.Scene;
+import java.awt.Point;
 
 public interface SceneControl {
     void undo();

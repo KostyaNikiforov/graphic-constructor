@@ -1,8 +1,8 @@
-package core.service.convetrors;
+package core.service.convetror;
 
+import core.model.Structure;
 import java.util.List;
 import javax.swing.JPanel;
-import core.model.Structure;
 
 public interface StructureToSettingComponents {
     List<JPanel> convert(Structure structure);

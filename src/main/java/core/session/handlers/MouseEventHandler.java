@@ -1,10 +1,10 @@
 package core.session.handlers;
 
+import core.Config;
+import core.controller.MouseController;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.Map;
-import core.Config;
-import core.controller.MouseController;
 
 public class MouseEventHandler implements MouseListener {
     private static final int LEFT_BUTTON = 3;
@@ -33,6 +33,8 @@ public class MouseEventHandler implements MouseListener {
             case MIDDLE_BUTTON:
                 System.out.println("middle");
                 mouseController = controllerMap.get("middle_click");
+                break;
+            default:
                 break;
         }
         if (mouseController != null) {

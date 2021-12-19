@@ -1,9 +1,8 @@
-package core.service.scene.structure.pick.strategy;
+package core.service.scene.structure.pick;
 
+import core.model.Structure;
 import java.awt.Graphics2D;
 import java.awt.Point;
-import core.model.Structure;
-import core.service.scene.structure.pick.StructurePicker;
 
 public class CirclePicker implements StructurePicker {
     @Override

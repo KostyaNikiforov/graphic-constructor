@@ -1,5 +1,12 @@
 package core.gui.models.panels.bottom;
 
+import core.Config;
+import core.controller.Controller;
+import core.gui.models.ElementsGroup;
+import core.session.handlers.ColorButtonActionHandler;
+import core.session.handlers.SliderChangeListener;
+import core.utils.FormatFunctions;
+import core.utils.sys.Machine;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Point;
@@ -10,13 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JToggleButton;
-import core.Config;
-import core.controller.Controller;
-import core.gui.models.ElementsGroup;
-import core.session.handlers.ColorButtonActionHandler;
-import core.session.handlers.SliderChangeListener;
-import core.utils.FormatFunctions;
-import core.utils.sys.Machine;
 
 public class BottomPanel extends JPanel implements ElementsGroup,
         MemoryInfoText, MousePositionText {

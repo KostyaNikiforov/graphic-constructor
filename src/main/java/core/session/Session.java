@@ -1,6 +1,5 @@
 package core.session;
 
-import java.awt.Point;
 import core.gui.Window;
 import core.gui.models.canvas.SceneCanvas;
 import core.model.Scene;
@@ -8,6 +7,7 @@ import core.service.scene.SceneControl;
 import core.service.scene.SceneControlImpl;
 import core.session.enums.CreatingMode;
 import core.utils.sys.Machine;
+import java.awt.Point;
 
 public class Session {
     private final Properties properties;

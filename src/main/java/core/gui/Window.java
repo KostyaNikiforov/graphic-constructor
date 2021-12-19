@@ -1,9 +1,5 @@
 package core.gui;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Container;
-import javax.swing.JFrame;
 import core.Config;
 import core.gui.models.ElementsGroup;
 import core.gui.models.canvas.SceneCanvas;
@@ -15,6 +11,10 @@ import core.gui.models.panels.left.LeftToolPanel;
 import core.gui.models.panels.right.Autocomplete;
 import core.gui.models.panels.right.Closeable;
 import core.gui.models.panels.right.RightSettingsPanel;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Container;
+import javax.swing.JFrame;
 
 public class Window extends JFrame {
     private final MainMenu menuBar;

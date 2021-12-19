@@ -1,5 +1,9 @@
 package core.gui.models.panels.left;
 
+import core.Config;
+import core.controller.Controller;
+import core.gui.models.ElementsGroup;
+import core.session.handlers.PanelButtonActionHandler;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;
@@ -7,10 +11,6 @@ import javax.swing.ButtonGroup;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.border.BevelBorder;
-import core.Config;
-import core.controller.Controller;
-import core.gui.models.ElementsGroup;
-import core.session.handlers.PanelButtonActionHandler;
 
 public class LeftToolPanel extends JToolBar implements ElementsGroup {
     private final PanelButtonActionHandler buttonActionHandler;

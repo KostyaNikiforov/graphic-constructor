@@ -1,9 +1,9 @@
 package core.session.handlers;
 
+import core.controller.Controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Map;
-import core.controller.Controller;
 
 public class PanelButtonActionHandler implements ActionListener {
     private final Map<String, Controller> controllerMap;

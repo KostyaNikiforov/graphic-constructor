@@ -1,9 +1,9 @@
 package core.controller.mouse;
 
-import java.awt.Point;
 import core.App;
 import core.controller.MouseController;
 import core.session.Session;
+import java.awt.Point;
 
 public class StructureCreatingController implements MouseController {
     @Override

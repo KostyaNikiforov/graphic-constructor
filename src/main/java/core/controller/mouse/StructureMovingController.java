@@ -1,8 +1,8 @@
 package core.controller.mouse;
 
-import java.awt.Point;
 import core.App;
 import core.controller.MouseController;
+import java.awt.Point;
 
 public class StructureMovingController implements MouseController {
     @Override

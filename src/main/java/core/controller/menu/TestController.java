@@ -1,7 +1,7 @@
 package core.controller.menu;
 
-import javax.swing.JOptionPane;
 import core.controller.Controller;
+import javax.swing.JOptionPane;
 
 public class TestController implements Controller {
     @Override

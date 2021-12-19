@@ -1,10 +1,10 @@
 package core.session;
 
-import java.awt.Color;
-import java.awt.Point;
 import core.Config;
 import core.model.Structure;
 import core.session.enums.CreatingMode;
+import java.awt.Color;
+import java.awt.Point;
 
 public class Properties {
     private CreatingMode creatingMode;
@@ -12,15 +12,14 @@ public class Properties {
     private int currentStroke;
     private Structure chosenStructure;
     private Point startPoint;
-    private Point movingPoint;
-    private boolean autoUpdate;
+    private Point[] pickedUpPints;
 
     {
         creatingMode = Config.DEFAULT_CREATING_MODE;
         currentColor = Config.DEFAULT_COLOR;
         currentStroke = Config.DEFAULT_STROKE;
         chosenStructure = null;
-        movingPoint = null;
+        pickedUpPints = null;
     }
 
     public CreatingMode getCreatingMode() {
@@ -63,19 +62,11 @@ public class Properties {
         this.startPoint = startPoint;
     }
 
-    public boolean isAutoUpdate() {
-        return autoUpdate;
+    public Point[] getPickedUpPints() {
+        return pickedUpPints;
     }
 
-    public void setAutoUpdate(boolean autoUpdate) {
-        this.autoUpdate = autoUpdate;
-    }
-
-    public void setMovingPoint(Point movingPoint) {
-        this.movingPoint = movingPoint;
-    }
-
-    public Point getMovingPoint() {
-        return movingPoint;
+    public void setPickedUpPints(Point[] pickedUpPints) {
+        this.pickedUpPints = pickedUpPints;
     }
 }

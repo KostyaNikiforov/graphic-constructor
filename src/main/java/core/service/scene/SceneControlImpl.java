@@ -1,12 +1,12 @@
 package core.service.scene;
 
-import java.awt.Color;
-import java.awt.Point;
 import core.App;
 import core.model.Scene;
 import core.model.Structure;
 import core.session.enums.CreatingMode;
 import core.utils.sys.Machine;
+import java.awt.Color;
+import java.awt.Point;
 
 public class SceneControlImpl implements SceneControl {
     private final Scene scene;

@@ -1,8 +1,8 @@
 package core.service.create.strategy;
 
-import java.util.Map;
 import core.service.create.strategy.creators.StructureCreator;
 import core.session.enums.CreatingMode;
+import java.util.Map;
 
 public class StructureCreateStrategyImpl implements StructureCreateStrategy {
     private final Map<CreatingMode, StructureCreator> creatorsMap;

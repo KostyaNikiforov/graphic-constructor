@@ -1,9 +1,9 @@
 package core.service.create.strategy.creators;
 
-import java.awt.Point;
 import core.App;
 import core.model.Circle;
 import core.model.Structure;
+import java.awt.Point;
 
 public class CircleCreator implements StructureCreator {
     @Override

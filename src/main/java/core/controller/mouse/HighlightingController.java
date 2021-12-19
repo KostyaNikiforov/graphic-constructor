@@ -1,9 +1,9 @@
 package core.controller.mouse;
 
-import java.awt.Point;
 import core.App;
 import core.controller.MouseController;
 import core.session.Session;
+import java.awt.Point;
 
 public class HighlightingController implements MouseController {
     @Override
@@ -13,6 +13,6 @@ public class HighlightingController implements MouseController {
                 .drawHighlightingRect(
                         session.getProperties().getStartPoint(),
                         point
-                );
+        );
     }
 }

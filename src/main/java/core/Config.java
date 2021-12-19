@@ -1,10 +1,5 @@
 package core;
 
-import java.awt.BasicStroke;
-import java.awt.Color;
-import java.util.HashMap;
-import java.util.Map;
-import javax.swing.ImageIcon;
 import core.controller.MouseController;
 import core.controller.SettingController;
 import core.controller.colors.BlackController;
@@ -28,8 +23,8 @@ import core.controller.panel.LineModeButton;
 import core.controller.panel.MoveModeController;
 import core.controller.panel.RectModeController;
 import core.controller.setting.HeightController;
-import core.controller.setting.StrokeController;
 import core.controller.setting.RadiusController;
+import core.controller.setting.StrokeController;
 import core.controller.setting.WidthController;
 import core.controller.setting.XController;
 import core.controller.setting.YController;
@@ -43,6 +38,11 @@ import core.service.create.strategy.creators.RectCreator;
 import core.service.create.strategy.creators.StructureCreator;
 import core.session.enums.CreatingMode;
 import core.utils.sys.Machine;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.util.HashMap;
+import java.util.Map;
+import javax.swing.ImageIcon;
 
 public class Config {
     public static final int WINDOW_HEIGHT = (int) (Machine.getScreenHeight() * 0.7);
@@ -84,15 +84,20 @@ public class Config {
     };
 
     public static final LeftPanelButton[] LEFT_PANEL_BUTTONS = new LeftPanelButton[] {
-            new LeftPanelButton(new ImageIcon("src/main/resources/icons/hand_icon_25x25.png"),
+            new LeftPanelButton(
+                    new ImageIcon("src/main/resources/icons/hand_icon_25x25.png"),
                     "move", new MoveModeController()),
-            new LeftPanelButton(new ImageIcon("src/main/resources/icons/dashed_rect_icon_25x25.png"),
+            new LeftPanelButton(
+                    new ImageIcon("src/main/resources/icons/dashed_rect_icon_25x25.png"),
                     "Highlight", new HighlightModeController()),
-            new LeftPanelButton(new ImageIcon("src/main/resources/icons/line_icon_25x25.png"),
+            new LeftPanelButton(
+                    new ImageIcon("src/main/resources/icons/line_icon_25x25.png"),
                     "line", new LineModeButton()),
-            new LeftPanelButton(new ImageIcon("src/main/resources/icons/circle_icon_25x25.png"),
+            new LeftPanelButton(
+                    new ImageIcon("src/main/resources/icons/circle_icon_25x25.png"),
                     "circle", new CircleModeController()),
-            new LeftPanelButton(new ImageIcon("src/main/resources/icons/rect_icon_25x25.png"),
+            new LeftPanelButton(
+                    new ImageIcon("src/main/resources/icons/rect_icon_25x25.png"),
                     "rect", new RectModeController())
     };
 

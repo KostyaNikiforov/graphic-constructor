@@ -1,8 +1,8 @@
 package core.service.scene.structure.draw;
 
-import java.awt.Graphics2D;
 import core.model.Circle;
 import core.model.Structure;
+import java.awt.Graphics2D;
 
 public class CircleDrawer implements StructureDrawer {
     @Override

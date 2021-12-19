@@ -1,41 +1,55 @@
 package core.model;
 
-import java.awt.Point;
 import core.model.type.StructureType;
+import java.awt.Point;
 
 public class Rect extends Structure {
-    private int width;
-    private int height;
+    private Point startPoint;
+    private Point endPoint;
 
-    public Rect(Point centerPosition, int width, int height) {
+    public Rect(Point centerPosition, Point startPoint, Point endPoint) {
         super(centerPosition,StructureType.RECT);
-        this.width = width;
-        this.height = height;
+        this.startPoint = startPoint;
+        this.endPoint = endPoint;
     }
 
     public int getWidth() {
-        return width;
+        return (int) (endPoint.getX() - startPoint.getX());
     }
 
     public void setWidth(int width) {
-        this.width = width;
+        endPoint.setLocation(startPoint.getX() + width, endPoint.getY());
     }
 
     public int getHeight() {
-        return height;
+        return (int) (endPoint.getY() - startPoint.getY());
     }
 
     public void setHeight(int height) {
-        this.height = height;
+        endPoint.setLocation(endPoint.getX(), startPoint.getY() + height);
+    }
+
+    public Point getStartPoint() {
+        return startPoint;
+    }
+
+    public void setStartPoint(Point startPoint) {
+        this.startPoint = startPoint;
+    }
+
+    public Point getEndPoint() {
+        return endPoint;
+    }
+
+    public void setEndPoint(Point endPoint) {
+        this.endPoint = endPoint;
     }
 
     @Override
     public boolean isInside(Point position) {
-        int halfW = width / 2;
-        int halfH = height / 2;
-        return centerPosition.getX() - halfW < position.getX()
-                && centerPosition.getY() - halfH < position.getY()
-                && centerPosition.getX() + halfW > position.getX()
-                && centerPosition.getY() + halfH > position.getY();
+        return startPoint.getX() < position.getX()
+                && startPoint.getY() < position.getY()
+                && endPoint.getX() > position.getX()
+                && endPoint.getY() > position.getY();
     }
 }

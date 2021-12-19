@@ -1,14 +1,14 @@
 package core.model;
 
+import core.model.type.StructureType;
 import java.awt.Color;
 import java.awt.Point;
-import core.model.type.StructureType;
 
 public abstract class Structure implements Cloneable, Searchable {
-    public final StructureType type;
     protected Point centerPosition;
     protected Color color;
     protected int stroke;
+    private final StructureType type;
 
     public Structure(Point centerPosition, StructureType type) {
         this.centerPosition = centerPosition;
@@ -37,6 +37,10 @@ public abstract class Structure implements Cloneable, Searchable {
 
     public void setColor(Color color) {
         this.color = color;
+    }
+
+    public StructureType getType() {
+        return type;
     }
 
     @Override

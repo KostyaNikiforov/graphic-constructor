@@ -1,11 +1,11 @@
 package core.controller.mouse;
 
-import java.awt.Point;
-import java.util.Optional;
 import core.App;
 import core.controller.MouseController;
 import core.model.Structure;
 import core.session.Session;
+import java.awt.Point;
+import java.util.Optional;
 
 public class LeftDoubleClickController implements MouseController {
     @Override

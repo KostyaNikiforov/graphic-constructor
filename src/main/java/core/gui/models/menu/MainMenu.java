@@ -1,11 +1,11 @@
 package core.gui.models.menu;
 
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
 import core.gui.models.ElementsGroup;
 import core.gui.models.menu.items.MenuItem;
 import core.gui.models.menu.items.SubMenuItem;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 public class MainMenu extends JMenuBar implements ElementsGroup {
     private static final long serialVersionUID = 1L;

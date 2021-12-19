@@ -1,8 +1,8 @@
 package core.gui.models.panels.left;
 
-import javax.swing.Icon;
 import core.controller.Controller;
 import core.gui.models.panels.PanelButton;
+import javax.swing.Icon;
 
 public class LeftPanelButton extends PanelButton {
     private String text;

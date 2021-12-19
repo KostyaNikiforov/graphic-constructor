@@ -1,12 +1,13 @@
 package core.service.scene.structure.pick.strategy;
 
-import java.util.HashMap;
-import java.util.Map;
 import core.lib.Service;
 import core.model.type.StructureType;
+import core.service.scene.structure.pick.CirclePicker;
 import core.service.scene.structure.pick.LinePicker;
 import core.service.scene.structure.pick.RectPicker;
 import core.service.scene.structure.pick.StructurePicker;
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class PickStrategyImpl implements PickStrategy {

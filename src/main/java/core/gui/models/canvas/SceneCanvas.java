@@ -1,11 +1,5 @@
 package core.gui.models.canvas;
 
-import java.awt.BasicStroke;
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.util.List;
 import core.App;
 import core.Config;
 import core.gui.models.ElementsGroup;
@@ -15,6 +9,12 @@ import core.service.scene.structure.draw.strategy.DrawStrategy;
 import core.service.scene.structure.pick.strategy.PickStrategy;
 import core.session.handlers.MouseEventHandler;
 import core.session.handlers.MouseMotionHandler;
+import java.awt.BasicStroke;
+import java.awt.Canvas;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.util.List;
 
 public class SceneCanvas extends Canvas implements ElementsGroup {
     private static final Injector injector = Injector.getInstance("core.service.scene.structure");
@@ -40,7 +40,7 @@ public class SceneCanvas extends Canvas implements ElementsGroup {
     public void drawStructure(Structure structure, Graphics2D graphics2D) {
         graphics2D.setStroke(new BasicStroke(structure.getStroke()));
         graphics2D.setColor(structure.getColor());
-        drawStrategy.getStructureDrawer(structure.type).draw(structure, graphics2D);
+        drawStrategy.getStructureDrawer(structure.getType()).draw(structure, graphics2D);
     }
 
     private void drawStructures(List<Structure> structures) {
@@ -56,6 +56,6 @@ public class SceneCanvas extends Canvas implements ElementsGroup {
     private void pickUpStructure(Structure structure, Graphics2D graphics2D) {
         graphics2D.setColor(Color.WHITE);
         graphics2D.setStroke(new BasicStroke(1));
-        pickStrategy.getStructurePicker(structure.type).pickUp(structure, graphics2D);
+        pickStrategy.getStructurePicker(structure.getType()).pickUp(structure, graphics2D);
     }
 }

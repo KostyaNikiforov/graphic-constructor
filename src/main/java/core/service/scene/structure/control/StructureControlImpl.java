@@ -1,25 +1,23 @@
 package core.service.scene.structure.control;
 
-import java.awt.Point;
-import java.util.Optional;
 import core.App;
 import core.lib.Inject;
 import core.lib.Service;
 import core.model.Structure;
 import core.service.scene.structure.StructureContainer;
+import java.awt.Point;
+import java.util.Optional;
 
+@Service
 public class StructureControlImpl implements StructureControl {
     @Inject
     private StructureContainer structureContainer;
 
     @Override
     public Optional<Structure> findStructureOnPosition(Point position) {
-        for (Structure structure : structureContainer.getAllStructures()) {
-            if (structure.isInside(position)) {
-                return Optional.of(structure);
-            }
-        }
-        return Optional.empty();
+        return structureContainer.getAllStructures().stream()
+                .filter(x -> x.isInside(position))
+                .findFirst();
     }
 
     @Override

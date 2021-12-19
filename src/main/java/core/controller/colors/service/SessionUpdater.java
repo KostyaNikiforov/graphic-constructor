@@ -1,9 +1,9 @@
 package core.controller.colors.service;
 
-import java.awt.Color;
 import core.App;
 import core.lib.Service;
 import core.model.Structure;
+import java.awt.Color;
 
 @Service
 public class SessionUpdater implements StructureUpdater, PropertiesUpdater {

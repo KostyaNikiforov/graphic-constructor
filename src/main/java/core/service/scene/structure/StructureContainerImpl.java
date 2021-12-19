@@ -1,9 +1,9 @@
 package core.service.scene.structure;
 
-import java.util.ArrayList;
-import java.util.List;
 import core.lib.Service;
 import core.model.Structure;
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class StructureContainerImpl implements StructureContainer {

@@ -1,14 +1,12 @@
 package core.service.scene.structure.control;
 
-import java.awt.Point;
-import java.util.Optional;
 import core.App;
 import core.lib.Inject;
-import core.lib.Service;
 import core.model.Structure;
 import core.service.scene.structure.StructureContainer;
+import java.awt.Point;
+import java.util.Optional;
 
-@Service
 public class PointControlImpl implements StructureControl {
     @Inject
     private StructureContainer structureContainer;
@@ -25,7 +23,7 @@ public class PointControlImpl implements StructureControl {
 
     @Override
     public void moveTo(Point point) {
-        Point basePoint = App.getSession().getProperties().getMovingPoint();
+        Point basePoint = App.getSession().getProperties().getPickedUpPints()[1];
         if (basePoint != null) {
             basePoint.setLocation(point);
             App.getSession().getSceneControl().update();

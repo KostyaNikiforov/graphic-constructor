@@ -1,7 +1,5 @@
 package core.session.handlers;
 
-import java.awt.Point;
-import java.awt.event.MouseEvent;
 import core.App;
 import core.controller.MouseController;
 import core.controller.mouse.HighlightingController;
@@ -9,6 +7,8 @@ import core.controller.mouse.MouseMovingController;
 import core.controller.mouse.StructureCreatingController;
 import core.controller.mouse.StructureMovingController;
 import core.session.enums.CreatingMode;
+import java.awt.Point;
+import java.awt.event.MouseEvent;
 
 public class MouseMotionHandler implements java.awt.event.MouseMotionListener {
     private final MouseController highlightingController;

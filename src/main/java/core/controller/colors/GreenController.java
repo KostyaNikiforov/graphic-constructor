@@ -1,10 +1,10 @@
 package core.controller.colors;
 
-import java.awt.Color;
 import core.controller.Controller;
 import core.controller.colors.service.PropertiesUpdater;
 import core.controller.colors.service.StructureUpdater;
 import core.lib.Injector;
+import java.awt.Color;
 
 public class GreenController implements Controller {
     private static final Injector injector = Injector.getInstance("core.controller.colors.service");

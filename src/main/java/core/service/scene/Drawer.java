@@ -1,16 +1,16 @@
 package core.service.scene;
 
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Point;
 import core.App;
 import core.Config;
 import core.gui.models.canvas.SceneCanvas;
 import core.model.Structure;
 import core.service.create.strategy.StructureCreateStrategy;
 import core.session.enums.CreatingMode;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Point;
 
-public class Drawer implements  Highlighting, Creating {
+public class Drawer implements Highlighting, Creating {
     private StructureCreateStrategy structureCreateStrategy;
     private SceneCanvas sceneCanvas;
 
@@ -27,8 +27,12 @@ public class Drawer implements  Highlighting, Creating {
         g.setColor(Color.GREEN);
         Point startPoint = App.getSession().getProperties().getStartPoint();
         g.drawRect(
-                startPoint.getX() < pointEnd.getX() ? (int) startPoint.getX() : (int) pointEnd.getX(),
-                startPoint.getY() < pointEnd.getY() ? (int) startPoint.getY() : (int) pointEnd.getY(),
+                startPoint.getX() < pointEnd.getX()
+                        ? (int) startPoint.getX()
+                        : (int) pointEnd.getX(),
+                startPoint.getY() < pointEnd.getY()
+                        ? (int) startPoint.getY()
+                        : (int) pointEnd.getY(),
                 (int) Math.abs(pointEnd.getX() - startPoint.getX()),
                 (int) Math.abs(pointEnd.getY() - startPoint.getY())
         );

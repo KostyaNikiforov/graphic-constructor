@@ -1,9 +1,9 @@
 package core.controller.setting;
 
-import java.awt.Point;
 import core.App;
 import core.controller.SettingController;
 import core.model.Structure;
+import java.awt.Point;
 
 public class YController implements SettingController {
     @Override

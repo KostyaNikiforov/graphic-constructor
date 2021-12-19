@@ -1,8 +1,8 @@
 package core.gui.models.panels.bottom;
 
-import java.awt.Color;
 import core.controller.Controller;
 import core.gui.models.panels.PanelButton;
+import java.awt.Color;
 
 public class ColorButton extends PanelButton {
     private Color color;

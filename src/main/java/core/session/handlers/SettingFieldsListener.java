@@ -1,11 +1,11 @@
 package core.session.handlers;
 
-import java.awt.TextField;
-import java.awt.event.TextEvent;
-import java.awt.event.TextListener;
 import core.App;
 import core.Config;
 import core.model.Structure;
+import java.awt.TextField;
+import java.awt.event.TextEvent;
+import java.awt.event.TextListener;
 
 public class SettingFieldsListener implements TextListener {
     @Override

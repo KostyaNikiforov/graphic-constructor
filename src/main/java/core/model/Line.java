@@ -1,7 +1,7 @@
 package core.model;
 
-import java.awt.Point;
 import core.model.type.StructureType;
+import java.awt.Point;
 
 public class Line extends Structure {
     private Point relativeStartPosition;

@@ -1,14 +1,14 @@
 package core.gui.models.panels.right;
 
+import core.App;
+import core.Config;
+import core.gui.models.ElementsGroup;
+import core.utils.sys.Machine;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
-import core.App;
-import core.Config;
-import core.gui.models.ElementsGroup;
-import core.utils.sys.Machine;
 
 public class RightSettingsPanel extends JPanel implements ElementsGroup, Autocomplete, Closeable {
     public RightSettingsPanel() {

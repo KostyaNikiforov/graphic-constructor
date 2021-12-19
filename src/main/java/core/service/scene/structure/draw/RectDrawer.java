@@ -1,16 +1,16 @@
 package core.service.scene.structure.draw;
 
-import java.awt.Graphics2D;
 import core.model.Rect;
 import core.model.Structure;
+import java.awt.Graphics2D;
 
 public class RectDrawer implements StructureDrawer {
     @Override
     public void draw(Structure structure, Graphics2D g) {
         Rect rect = (Rect) structure;
         g.drawRect(
-                (int) (rect.getCenterPosition().getX() - rect.getWidth() / 2),
-                (int) (rect.getCenterPosition().getY() - rect.getHeight() / 2),
+                (int) (rect.getStartPoint().getX()),
+                (int) (rect.getStartPoint().getY()),
                 rect.getWidth(),
                 rect.getHeight()
         );
