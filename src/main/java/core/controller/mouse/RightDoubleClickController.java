@@ -20,6 +20,7 @@ public class RightDoubleClickController implements MouseController {
         Optional<Structure> optionalStructure = session.getSceneControl().getScene()
                 .getStructureControl().findStructureOnPosition(point);
         if (optionalStructure.isPresent()) {
+            session.getProperties().setMovingPoint(optionalStructure.get().getCenterPosition());
             session.getProperties().setCreatingMode(CreatingMode.MOVING);
             session.getProperties().setChosenStructure(optionalStructure.get());
             session.getMainWindow().getAutocompleteRightPanel()

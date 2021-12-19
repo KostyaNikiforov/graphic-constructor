@@ -3,7 +3,7 @@ package core.service.scene.structure.draw.strategy;
 import java.util.HashMap;
 import java.util.Map;
 import core.lib.Service;
-import core.model.types.StructureType;
+import core.model.type.StructureType;
 import core.service.scene.structure.draw.CircleDrawer;
 import core.service.scene.structure.draw.LineDrawer;
 import core.service.scene.structure.draw.RectDrawer;

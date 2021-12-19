@@ -1,6 +1,6 @@
 package core.service.scene.structure.draw.strategy;
 
-import core.model.types.StructureType;
+import core.model.type.StructureType;
 import core.service.scene.structure.draw.StructureDrawer;
 
 public interface DrawStrategy {

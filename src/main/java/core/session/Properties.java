@@ -12,6 +12,7 @@ public class Properties {
     private int currentStroke;
     private Structure chosenStructure;
     private Point startPoint;
+    private Point movingPoint;
     private boolean autoUpdate;
 
     {
@@ -19,6 +20,7 @@ public class Properties {
         currentColor = Config.DEFAULT_COLOR;
         currentStroke = Config.DEFAULT_STROKE;
         chosenStructure = null;
+        movingPoint = null;
     }
 
     public CreatingMode getCreatingMode() {
@@ -67,5 +69,13 @@ public class Properties {
 
     public void setAutoUpdate(boolean autoUpdate) {
         this.autoUpdate = autoUpdate;
+    }
+
+    public void setMovingPoint(Point movingPoint) {
+        this.movingPoint = movingPoint;
+    }
+
+    public Point getMovingPoint() {
+        return movingPoint;
     }
 }

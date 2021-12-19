@@ -1,4 +1,4 @@
-package core.model.types;
+package core.model.type;
 
 public enum StructureType {
     CIRCLE("Circle"),

@@ -1,7 +1,7 @@
 package core.model;
 
 import java.awt.Point;
-import core.model.types.StructureType;
+import core.model.type.StructureType;
 
 public class Rect extends Structure {
     private int width;

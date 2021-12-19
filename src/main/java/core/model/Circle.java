@@ -1,9 +1,7 @@
 package core.model;
 
-import java.awt.Graphics;
 import java.awt.Point;
-import core.model.types.StructureType;
-import core.utils.MathFunctions;
+import core.model.type.StructureType;
 
 public class Circle extends Structure {
     private int radius;

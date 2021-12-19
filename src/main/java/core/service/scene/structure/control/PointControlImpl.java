@@ -8,7 +8,8 @@ import core.lib.Service;
 import core.model.Structure;
 import core.service.scene.structure.StructureContainer;
 
-public class StructureControlImpl implements StructureControl {
+@Service
+public class PointControlImpl implements StructureControl {
     @Inject
     private StructureContainer structureContainer;
 
@@ -24,9 +25,9 @@ public class StructureControlImpl implements StructureControl {
 
     @Override
     public void moveTo(Point point) {
-        Structure structure = App.getSession().getProperties().getChosenStructure();
-        if (structure != null) {
-            structure.setCenterPosition(point);
+        Point basePoint = App.getSession().getProperties().getMovingPoint();
+        if (basePoint != null) {
+            basePoint.setLocation(point);
             App.getSession().getSceneControl().update();
         }
     }

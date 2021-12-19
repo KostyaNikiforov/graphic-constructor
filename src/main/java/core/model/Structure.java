@@ -2,7 +2,7 @@ package core.model;
 
 import java.awt.Color;
 import java.awt.Point;
-import core.model.types.StructureType;
+import core.model.type.StructureType;
 
 public abstract class Structure implements Cloneable, Searchable {
     public final StructureType type;
