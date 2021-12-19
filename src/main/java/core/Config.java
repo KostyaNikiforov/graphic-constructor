@@ -60,7 +60,7 @@ public class Config {
     public static final Color PANEL_BG_COLOR = Color.GRAY;
     public static final Color CANVAS_BG_COLOR = Color.GRAY;
     public static final CreatingMode DEFAULT_CREATING_MODE = CreatingMode.HIGHLIGHTING;
-    public static final Color DEFAULT_COLOR = Color.WHITE;
+    public static final Color DEFAULT_COLOR = Color.BLACK;
     public static final int DEFAULT_STROKE = 2;
     public static final BasicStroke BASIC_STROKE
             = new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL,

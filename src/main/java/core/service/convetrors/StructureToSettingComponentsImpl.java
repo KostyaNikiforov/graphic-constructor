@@ -21,7 +21,7 @@ public class StructureToSettingComponentsImpl implements StructureToSettingCompo
         for (Field field : structure.getClass().getDeclaredFields()) {
             try {
                 field.setAccessible(true);
-                components.add(valuesToSettingComponent(field.getName(), field.getInt(structure)));
+                components.add(valuesToSettingComponent(field.getName(), field.get(structure)));
             } catch (IllegalAccessException e) {
                 throw new RuntimeException("Cannot get asses to the field: "
                         + field.getName(), e);

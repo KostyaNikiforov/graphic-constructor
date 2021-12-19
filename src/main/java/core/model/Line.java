@@ -4,19 +4,19 @@ import java.awt.Point;
 import core.model.types.StructureType;
 
 public class Line extends Structure {
-    private Point startPosition;
+    private Point relativeStartPosition;
 
     public Line(Point centerPosition, Point startPosition) {
         super(centerPosition, StructureType.LINE);
-        this.startPosition = startPosition;
+        this.relativeStartPosition = startPosition;
     }
 
-    public Point getStartPosition() {
-        return startPosition;
+    public Point getRelativeStartPosition() {
+        return relativeStartPosition;
     }
 
-    public void setStartPosition(Point startPosition) {
-        this.startPosition = startPosition;
+    public void setRelativeStartPosition(Point relativeStartPosition) {
+        this.relativeStartPosition = relativeStartPosition;
     }
 
     @Override

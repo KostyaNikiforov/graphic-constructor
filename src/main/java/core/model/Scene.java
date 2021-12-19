@@ -1,5 +1,6 @@
 package core.model;
 
+import java.awt.Point;
 import core.Config;
 import core.gui.models.canvas.SceneCanvas;
 import core.service.create.strategy.StructureCreateStrategy;
@@ -16,6 +17,7 @@ public class Scene {
     private final SceneCanvas sceneCanvas;
     private final Drawer drawer;
     private final StructureContainer structureContainer;
+    private final Layer layer;
 
     public Scene(SceneCanvas sceneCanvas) {
         this.sceneCanvas = sceneCanvas;
@@ -27,6 +29,7 @@ public class Scene {
                 = new StructureControlImpl(structureContainer);
         drawer
                 = new Drawer(sceneCanvas, structureCreateStrategy);
+        layer = new Layer(0, 0, 700, 500); // DEFAULT VALUES
     }
 
     public StructureControl getStructureControl() {
@@ -47,5 +50,9 @@ public class Scene {
 
     public StructureContainer getStructureContainer() {
         return structureContainer;
+    }
+
+    public Layer getLayer() {
+        return layer;
     }
 }
