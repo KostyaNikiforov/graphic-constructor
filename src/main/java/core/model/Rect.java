@@ -12,7 +12,9 @@ public class Rect extends Structure {
     }
 
     public int getWidth() {
-        return Math.abs(relativePoints.get("start").x) * 2;
+        Point startPoint = MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("start"));
+        Point endPoint = MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("end"));
+        return endPoint.x - startPoint.x;
     }
 
     public void setWidth(int width) {
@@ -20,7 +22,9 @@ public class Rect extends Structure {
     }
 
     public int getHeight() {
-        return Math.abs(relativePoints.get("start").y) * 2;
+        Point startPoint = MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("start"));
+        Point endPoint = MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("end"));
+        return endPoint.y - startPoint.y;
     }
 
     public void setHeight(int height) {
