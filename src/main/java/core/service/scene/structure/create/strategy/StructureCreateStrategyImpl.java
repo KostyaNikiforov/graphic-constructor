@@ -1,6 +1,6 @@
-package core.service.create.strategy;
+package core.service.scene.structure.create.strategy;
 
-import core.service.create.strategy.creators.StructureCreator;
+import core.service.scene.structure.create.StructureCreator;
 import core.session.enums.CreatingMode;
 import java.util.Map;
 

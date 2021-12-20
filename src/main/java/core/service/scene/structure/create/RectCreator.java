@@ -1,4 +1,4 @@
-package core.service.create.strategy.creators;
+package core.service.scene.structure.create;
 
 import core.App;
 import core.model.Rect;
@@ -10,7 +10,11 @@ public class RectCreator implements StructureCreator {
     @Override
     public Structure create(Point startPosition, Point endPosition) {
         Point centerPosition = MathFunctions.getCenterPosition(startPosition, endPosition);
-        Rect rect = new Rect(centerPosition, startPosition, endPosition);
+        Rect rect = new Rect(
+                centerPosition,
+                MathFunctions.getRelativeFromAbsolute(centerPosition, startPosition),
+                MathFunctions.getRelativeFromAbsolute(centerPosition, endPosition)
+        );
         rect.setColor(App.getSession().getProperties().getCurrentColor());
         rect.setStroke(App.getSession().getProperties().getCurrentStroke());
         return rect;

@@ -8,11 +8,12 @@ public class CircleDrawer implements StructureDrawer {
     @Override
     public void draw(Structure structure, Graphics2D g) {
         Circle circle = (Circle) structure;
+        int radius = (int) circle.getRadius();
         g.drawOval(
-                (int) (circle.getCenterPosition().getX() - circle.getRadius()),
-                (int) (circle.getCenterPosition().getY() - circle.getRadius()),
-                (int) circle.getRadius() * 2,
-                (int) circle.getRadius() * 2
+                (int) (circle.getCenterPosition().getX() - radius),
+                (int) (circle.getCenterPosition().getY() - radius),
+                radius * 2,
+                radius * 2
         );
     }
 }

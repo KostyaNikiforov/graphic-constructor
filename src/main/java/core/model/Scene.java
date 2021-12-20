@@ -3,11 +3,11 @@ package core.model;
 import core.Config;
 import core.gui.models.canvas.SceneCanvas;
 import core.lib.Injector;
-import core.service.create.strategy.StructureCreateStrategy;
-import core.service.create.strategy.StructureCreateStrategyImpl;
 import core.service.scene.Drawer;
 import core.service.scene.structure.StructureContainer;
 import core.service.scene.structure.control.StructureControl;
+import core.service.scene.structure.create.strategy.StructureCreateStrategy;
+import core.service.scene.structure.create.strategy.StructureCreateStrategyImpl;
 
 public class Scene {
     private static final Injector injector = Injector.getInstance("core.service.scene.structure");

@@ -1,26 +1,29 @@
 package core.model;
 
 import core.model.type.StructureType;
+import core.utils.MathFunctions;
 import java.awt.Point;
 
 public class Circle extends Structure {
-    private int radius;
-
-    public Circle(Point centerPosition, int radius) {
+    public Circle(Point centerPosition, Point radiusPoint) {
         super(centerPosition, StructureType.CIRCLE);
-        this.radius = radius;
+        relativePoints.put("radius", radiusPoint);
     }
 
     public double getRadius() {
-        return radius;
+        return centerPosition.distance(
+                MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("radius"))
+        );
     }
 
     public void setRadius(int radius) {
-        this.radius = radius;
+        relativePoints.put("radius",
+                MathFunctions.getPositionByAngleAndDistance(centerPosition, radius, 0)
+        );
     }
 
     @Override
     public boolean isInside(Point position) {
-        return position.distance(centerPosition) < radius;
+        return position.distance(centerPosition) < getRadius();
     }
 }

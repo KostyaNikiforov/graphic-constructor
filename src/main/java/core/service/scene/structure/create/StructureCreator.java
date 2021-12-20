@@ -1,4 +1,4 @@
-package core.service.create.strategy.creators;
+package core.service.scene.structure.create;
 
 import core.model.Structure;
 import java.awt.Point;

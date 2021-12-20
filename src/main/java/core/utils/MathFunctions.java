@@ -25,4 +25,12 @@ public class MathFunctions {
         int y = (int) ((p1.getY() + p2.getY()) / 2);
         return new Point(x, y);
     }
+
+    public static Point getAbsolutFromRelative(Point base, Point point) {
+        return new Point(base.x + point.x, base.y + point.y);
+    }
+
+    public static Point getRelativeFromAbsolute(Point base, Point point) {
+        return new Point(point.x - base.x, point.y - base.y);
+    }
 }

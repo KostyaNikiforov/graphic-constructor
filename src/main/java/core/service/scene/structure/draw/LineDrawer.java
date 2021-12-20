@@ -10,12 +10,10 @@ public class LineDrawer implements StructureDrawer {
     @Override
     public void draw(Structure structure, Graphics2D g) {
         Line line = (Line) structure;
-        Point startPosition = new Point(
-                (int) (line.getCenterPosition().getX() + line.getRelativeStartPosition().getX()),
-                (int) (line.getCenterPosition().getY() + line.getRelativeStartPosition().getY())
-        );
+        Point startPosition = MathFunctions
+                .getAbsolutFromRelative(line.getCenterPosition(), line.getStartPosition());
         Point endPosition = MathFunctions
-                .getEgePositionOfLine(line.getCenterPosition(), startPosition);
+                .getAbsolutFromRelative(line.getCenterPosition(), line.getEndPosition());
         g.drawLine(
                 (int) startPosition.getX(),
                 (int) startPosition.getY(),

@@ -1,55 +1,56 @@
 package core.model;
 
 import core.model.type.StructureType;
+import core.utils.MathFunctions;
 import java.awt.Point;
 
 public class Rect extends Structure {
-    private Point startPoint;
-    private Point endPoint;
-
     public Rect(Point centerPosition, Point startPoint, Point endPoint) {
-        super(centerPosition,StructureType.RECT);
-        this.startPoint = startPoint;
-        this.endPoint = endPoint;
+        super(centerPosition, StructureType.RECT);
+        relativePoints.put("start", startPoint);
+        relativePoints.put("end", endPoint);
     }
 
     public int getWidth() {
-        return (int) (endPoint.getX() - startPoint.getX());
+        return Math.abs(relativePoints.get("start").x) * 2;
     }
 
     public void setWidth(int width) {
-        endPoint.setLocation(startPoint.getX() + width, endPoint.getY());
+
     }
 
     public int getHeight() {
-        return (int) (endPoint.getY() - startPoint.getY());
+        return Math.abs(relativePoints.get("start").y) * 2;
     }
 
     public void setHeight(int height) {
-        endPoint.setLocation(endPoint.getX(), startPoint.getY() + height);
     }
 
     public Point getStartPoint() {
-        return startPoint;
+        return relativePoints.get("start");
     }
 
     public void setStartPoint(Point startPoint) {
-        this.startPoint = startPoint;
+        relativePoints.put("start", startPoint);
     }
 
     public Point getEndPoint() {
-        return endPoint;
+        return relativePoints.get("end");
     }
 
     public void setEndPoint(Point endPoint) {
-        this.endPoint = endPoint;
+        relativePoints.put("end", endPoint);
     }
 
     @Override
     public boolean isInside(Point position) {
-        return startPoint.getX() < position.getX()
-                && startPoint.getY() < position.getY()
-                && endPoint.getX() > position.getX()
-                && endPoint.getY() > position.getY();
+        Point absoluteStartPoint = MathFunctions
+                .getAbsolutFromRelative(centerPosition, getStartPoint());
+        Point absoluteEndPoint = MathFunctions
+                .getAbsolutFromRelative(centerPosition, getEndPoint());
+        return absoluteStartPoint.getX() < position.getX()
+                && absoluteStartPoint.getY() < position.getY()
+                && absoluteEndPoint.getX() > position.getX()
+                && absoluteEndPoint.getY() > position.getY();
     }
 }
