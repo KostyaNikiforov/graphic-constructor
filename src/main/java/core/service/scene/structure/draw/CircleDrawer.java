@@ -10,8 +10,8 @@ public class CircleDrawer implements StructureDrawer {
         Circle circle = (Circle) structure;
         int radius = (int) circle.getRadius();
         g.drawOval(
-                (int) (circle.getCenterPosition().getX() - radius),
-                (int) (circle.getCenterPosition().getY() - radius),
+                circle.getCenterPosition().x - radius,
+                circle.getCenterPosition().y - radius,
                 radius * 2,
                 radius * 2
         );

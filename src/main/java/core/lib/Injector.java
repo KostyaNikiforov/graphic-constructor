@@ -68,7 +68,7 @@ public class Injector {
             }
         }
         throw new RuntimeException("Can't find class which implements "
-                + certainInterface.getName()
+                  + certainInterface.getName()
                 + " interface and has valid annotation (Service)");
     }
 

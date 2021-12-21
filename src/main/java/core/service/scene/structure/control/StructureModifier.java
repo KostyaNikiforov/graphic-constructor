@@ -1,10 +1,11 @@
 package core.service.scene.structure.control;
 
-import java.awt.Point;
+import core.Config;
 import core.model.Structure;
+import java.awt.Point;
 
 public interface StructureModifier {
-    int VISIBILITY_RADIUS = 15;
+    int VISIBILITY_RADIUS = Config.RELATIVE_POINTS_VISIBILITY_RADIUS;
 
     void modify(Structure structure, Point movedPoint);
 }

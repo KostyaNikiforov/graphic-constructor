@@ -1,7 +1,6 @@
 package core.service.scene.structure.pick;
 
 import core.model.Structure;
-import core.utils.MathFunctions;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.util.Map;
@@ -13,18 +12,18 @@ public interface StructurePicker {
 
     default void drawPickSquare(Structure structure, Graphics2D graphics2D) {
         for (Map.Entry<String, Point> entry : structure.getRelativePoints().entrySet()) {
-            Point absolutePoint = MathFunctions
-                    .getAbsolutFromRelative(structure.getCenterPosition(), entry.getValue());
+            Point point = entry.getValue();
             graphics2D.drawRect(
-                      absolutePoint.x - squareSideSize / 2,
-                     absolutePoint.y - squareSideSize / 2,
+                      point.x - squareSideSize / 2,
+                     point.y - squareSideSize / 2,
                     squareSideSize,
                     squareSideSize
             );
         }
+        Point centerPosition = structure.getCenterPosition();
         graphics2D.drawRect(
-                structure.getCenterPosition().x - squareSideSize / 2,
-                structure.getCenterPosition().y - squareSideSize / 2,
+                centerPosition.x - squareSideSize / 2,
+                centerPosition.y - squareSideSize / 2,
                 squareSideSize,
                 squareSideSize
         );

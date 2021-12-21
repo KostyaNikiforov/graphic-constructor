@@ -11,9 +11,7 @@ public class Circle extends Structure {
     }
 
     public double getRadius() {
-        return centerPosition.distance(
-                MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("radius"))
-        );
+        return centerPosition.distance(relativePoints.get("radius"));
     }
 
     public void setRadius(int radius) {

@@ -13,20 +13,8 @@ public class Line extends Structure {
         relativePoints.put("end", endPosition);
     }
 
-    public Point getStartPosition() {
-        return relativePoints.get("start");
-    }
-
-    public void setStartPosition(Point startPoint) {
-        relativePoints.put("start", startPoint);
-    }
-
-    public Point getEndPosition() {
-        return relativePoints.get("end");
-    }
-
-    public void setEndPosition(Point endPoint) {
-        relativePoints.put("end", endPoint);
+    public double getLength() {
+        return relativePoints.get("start").distance(relativePoints.get("end"));
     }
 
     @Override

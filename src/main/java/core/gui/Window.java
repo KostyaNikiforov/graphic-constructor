@@ -8,8 +8,7 @@ import core.gui.models.panels.bottom.BottomPanel;
 import core.gui.models.panels.bottom.MemoryInfoText;
 import core.gui.models.panels.bottom.MousePositionText;
 import core.gui.models.panels.left.LeftToolPanel;
-import core.gui.models.panels.right.Autocomplete;
-import core.gui.models.panels.right.Closeable;
+import core.gui.models.panels.right.DynamicToolsPanel;
 import core.gui.models.panels.right.RightSettingsPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -85,11 +84,7 @@ public class Window extends JFrame {
         return (MousePositionText) bottomPanel;
     }
 
-    public Autocomplete getAutocompleteRightPanel() {
-        return (Autocomplete) rightPanel;
-    }
-
-    public Closeable getCloseableRightPanel() {
-        return (Closeable) rightPanel;
+    public DynamicToolsPanel getDynamicToolsPanel() {
+        return (DynamicToolsPanel) rightPanel;
     }
 }
