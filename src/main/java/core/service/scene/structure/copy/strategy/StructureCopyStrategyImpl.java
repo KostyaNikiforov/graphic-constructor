@@ -4,7 +4,8 @@ import core.lib.Service;
 import core.model.type.StructureType;
 import core.service.exception.NoRealisationException;
 import core.service.scene.structure.copy.CircleCopyist;
-import core.service.scene.structure.copy.LineRectCopyist;
+import core.service.scene.structure.copy.LineCopyist;
+import core.service.scene.structure.copy.RectCopyist;
 import core.service.scene.structure.copy.StructureCopyist;
 import java.util.HashMap;
 import java.util.Map;
@@ -15,9 +16,8 @@ public class StructureCopyStrategyImpl implements StructureCopyStrategy {
 
     public StructureCopyStrategyImpl() {
         structureCopyistMap = new HashMap<>();
-        LineRectCopyist lineRectCopyist = new LineRectCopyist();
-        structureCopyistMap.put(StructureType.RECT, lineRectCopyist);
-        structureCopyistMap.put(StructureType.LINE, lineRectCopyist);
+        structureCopyistMap.put(StructureType.RECT, new RectCopyist());
+        structureCopyistMap.put(StructureType.LINE, new LineCopyist());
         structureCopyistMap.put(StructureType.CIRCLE, new CircleCopyist());
     }
 
