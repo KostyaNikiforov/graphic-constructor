@@ -1,6 +1,7 @@
 package core.model;
 
 import core.model.type.StructureType;
+import core.utils.MathFunctions;
 import java.awt.Point;
 
 public class Line extends Structure {

@@ -24,12 +24,13 @@ public class RightDoubleClickController implements MouseController {
             session.getProperties().setChosenStructure(optionalStructure.get());
             session.getMainWindow().getAutocompleteRightPanel()
                     .fillUp(structureToSettingComponents.convert(optionalStructure.get()));
-            App.getSession().getMainWindow()
+            session.getMainWindow()
                     .getCloseableRightPanel().open();
+            session.getSceneControl().update();
         } else {
-            App.getSession().getMainWindow()
+            session.getMainWindow()
                     .getCloseableRightPanel().close();
-            App.getSession().getProperties().setChosenStructure(null);
+            session.getProperties().setChosenStructure(null);
         }
     }
 }
