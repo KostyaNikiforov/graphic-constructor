@@ -62,6 +62,8 @@ public class Config {
     public static final CreatingMode DEFAULT_CREATING_MODE = CreatingMode.HIGHLIGHTING;
     public static final Color DEFAULT_COLOR = Color.BLACK;
     public static final int DEFAULT_STROKE = 2;
+    public static final int RELATIVE_POINTS_VISIBILITY_RADIUS = 15;
+    public static final int CLONE_SHIFT_DISTANCE = 25;
     public static final BasicStroke BASIC_STROKE
             = new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL,
             0, new float[]{9}, 0);
@@ -109,7 +111,6 @@ public class Config {
             new ColorButton(Color.DARK_GRAY, "dark_grey", new DarkGreyController()),
             new ColorButton(Color.WHITE, "white", new WhiteController()),
     };
-    public static final int RELATIVE_POINTS_VISIBILITY_RADIUS = 15;
 
     static {
         fillUpStructureCreatorMap();

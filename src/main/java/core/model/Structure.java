@@ -6,7 +6,7 @@ import java.awt.Point;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Structure implements Cloneable, Searchable {
+public abstract class Structure implements Searchable {
     protected Point centerPosition;
     protected Color color;
     protected int stroke;
@@ -54,17 +54,5 @@ public abstract class Structure implements Cloneable, Searchable {
     @Override
     public String toString() {
         return type.toString();
-    }
-
-    @Override
-    public Object clone() {
-        try {
-            Structure structure = (Structure) super.clone();
-            structure.setCenterPosition(new Point((int) this.getCenterPosition().getX() + 25,
-                    (int) this.getCenterPosition().getY() + 25));
-            return structure;
-        } catch (CloneNotSupportedException e) {
-            throw new RuntimeException("Cannot clone object: " + this, e);
-        }
     }
 }

@@ -31,7 +31,6 @@ public class MouseEventHandler implements MouseListener {
                 }
                 break;
             case MIDDLE_BUTTON:
-                System.out.println("middle");
                 mouseController = controllerMap.get("middle_click");
                 break;
             default:

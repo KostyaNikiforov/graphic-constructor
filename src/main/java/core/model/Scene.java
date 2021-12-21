@@ -1,6 +1,5 @@
 package core.model;
 
-import core.Config;
 import core.gui.models.canvas.SceneCanvas;
 import core.lib.Injector;
 import core.service.scene.Drawer;
@@ -20,8 +19,7 @@ public class Scene {
 
     public Scene(SceneCanvas sceneCanvas) {
         this.sceneCanvas = sceneCanvas;
-        structureCreateStrategy
-                = new StructureCreateStrategyImpl(Config.STRUCTURE_CREATOR_MAP);
+        structureCreateStrategy = new StructureCreateStrategyImpl();
         drawer
                 = new Drawer(sceneCanvas, structureCreateStrategy);
         layer = new Layer(0, 0, 700, 500); // DEFAULT VALUES
