@@ -2,9 +2,11 @@ package core.controller.mouse;
 
 import core.App;
 import core.controller.MouseController;
+import core.gui.models.panels.right.DynamicToolsPanel;
 import core.model.Structure;
 import core.service.convetror.StructureToSettingComponents;
 import core.service.convetror.StructureToSettingComponentsImpl;
+import core.session.Properties;
 import core.session.Session;
 import core.session.enums.CreatingMode;
 import java.awt.Point;
@@ -19,17 +21,17 @@ public class RightDoubleClickController implements MouseController {
         Session session = App.getSession();
         Optional<Structure> optionalStructure = session.getSceneControl().getScene()
                 .getStructureControl().findStructureOnPosition(point);
+        DynamicToolsPanel dynamicToolsPanel = session.getMainWindow().getDynamicToolsPanel();
         if (optionalStructure.isPresent()) {
-            session.getProperties().setCreatingMode(CreatingMode.MOVING);
-            session.getProperties().setChosenStructure(optionalStructure.get());
-            session.getMainWindow().getAutocompleteRightPanel()
-                    .fillUp(structureToSettingComponents.convert(optionalStructure.get()));
-            App.getSession().getMainWindow()
-                    .getCloseableRightPanel().open();
+            Properties properties = session.getProperties();
+            properties.setCreatingMode(CreatingMode.MOVING);
+            properties.setChosenStructure(optionalStructure.get());
+            dynamicToolsPanel.fillUp(structureToSettingComponents.convert(optionalStructure.get()));
+            dynamicToolsPanel.open();
+            session.getSceneControl().update();
         } else {
-            App.getSession().getMainWindow()
-                    .getCloseableRightPanel().close();
-            App.getSession().getProperties().setChosenStructure(null);
+            dynamicToolsPanel.close();
+            session.getProperties().setChosenStructure(null);
         }
     }
 }

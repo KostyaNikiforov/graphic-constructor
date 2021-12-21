@@ -109,6 +109,7 @@ public class Config {
             new ColorButton(Color.DARK_GRAY, "dark_grey", new DarkGreyController()),
             new ColorButton(Color.WHITE, "white", new WhiteController()),
     };
+    public static final int RELATIVE_POINTS_VISIBILITY_RADIUS = 15;
 
     static {
         fillUpStructureCreatorMap();

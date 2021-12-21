@@ -1,7 +1,6 @@
 package core.model;
 
 import core.model.type.StructureType;
-import core.utils.MathFunctions;
 import java.awt.Point;
 
 public class Rect extends Structure {
@@ -12,9 +11,7 @@ public class Rect extends Structure {
     }
 
     public int getWidth() {
-        Point startPoint = MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("start"));
-        Point endPoint = MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("end"));
-        return endPoint.x - startPoint.x;
+        return relativePoints.get("end").x - relativePoints.get("start").x;
     }
 
     public void setWidth(int width) {
@@ -22,9 +19,7 @@ public class Rect extends Structure {
     }
 
     public int getHeight() {
-        Point startPoint = MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("start"));
-        Point endPoint = MathFunctions.getAbsolutFromRelative(centerPosition, relativePoints.get("end"));
-        return endPoint.y - startPoint.y;
+        return relativePoints.get("end").y - relativePoints.get("start").y;
     }
 
     public void setHeight(int height) {
@@ -48,13 +43,9 @@ public class Rect extends Structure {
 
     @Override
     public boolean isInside(Point position) {
-        Point absoluteStartPoint = MathFunctions
-                .getAbsolutFromRelative(centerPosition, getStartPoint());
-        Point absoluteEndPoint = MathFunctions
-                .getAbsolutFromRelative(centerPosition, getEndPoint());
-        return absoluteStartPoint.getX() < position.getX()
-                && absoluteStartPoint.getY() < position.getY()
-                && absoluteEndPoint.getX() > position.getX()
-                && absoluteEndPoint.getY() > position.getY();
+        return relativePoints.get("start").x < position.getX()
+                && relativePoints.get("start").y < position.getY()
+                && relativePoints.get("end").x > position.getX()
+                && relativePoints.get("end").y > position.getY();
     }
 }

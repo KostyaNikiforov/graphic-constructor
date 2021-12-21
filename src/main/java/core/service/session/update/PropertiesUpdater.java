@@ -1,4 +1,4 @@
-package core.controller.colors.service;
+package core.service.session.update;
 
 import java.awt.Color;
 

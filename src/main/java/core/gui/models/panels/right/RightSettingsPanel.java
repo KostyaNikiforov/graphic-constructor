@@ -2,7 +2,6 @@ package core.gui.models.panels.right;
 
 import core.App;
 import core.Config;
-import core.gui.models.ElementsGroup;
 import core.utils.sys.Machine;
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -10,7 +9,7 @@ import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.border.BevelBorder;
 
-public class RightSettingsPanel extends JPanel implements ElementsGroup, Autocomplete, Closeable {
+public class RightSettingsPanel extends JPanel implements DynamicToolsPanel {
     public RightSettingsPanel() {
         super(new GridLayout(20, 0, 15, 5));
     }

@@ -1,9 +1,9 @@
 package core.controller.colors;
 
 import core.controller.Controller;
-import core.controller.colors.service.PropertiesUpdater;
-import core.controller.colors.service.StructureUpdater;
 import core.lib.Injector;
+import core.service.session.update.PropertiesUpdater;
+import core.service.session.update.StructureUpdater;
 import java.awt.Color;
 
 public class GreenController implements Controller {

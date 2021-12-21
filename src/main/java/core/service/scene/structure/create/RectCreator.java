@@ -12,8 +12,8 @@ public class RectCreator implements StructureCreator {
         Point centerPosition = MathFunctions.getCenterPosition(startPosition, endPosition);
         Rect rect = new Rect(
                 centerPosition,
-                MathFunctions.getRelativeFromAbsolute(centerPosition, startPosition),
-                MathFunctions.getRelativeFromAbsolute(centerPosition, endPosition)
+                startPosition,
+                endPosition
         );
         rect.setColor(App.getSession().getProperties().getCurrentColor());
         rect.setStroke(App.getSession().getProperties().getCurrentStroke());
