@@ -3,6 +3,7 @@ package core.service.scene.structure;
 import core.lib.Service;
 import core.model.Structure;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 @Service
@@ -10,7 +11,7 @@ public class StructureContainerImpl implements StructureContainer {
     private final List<Structure> structures;
 
     public StructureContainerImpl() {
-        structures = new ArrayList<>();
+        structures = new LinkedList<>();
     }
 
     @Override

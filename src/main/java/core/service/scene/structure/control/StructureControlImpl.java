@@ -1,12 +1,18 @@
 package core.service.scene.structure.control;
 
 import core.App;
+import core.gui.models.panels.right.DynamicToolsPanel;
 import core.lib.Inject;
 import core.lib.Service;
 import core.model.Structure;
 import core.service.scene.structure.StructureContainer;
 import core.service.scene.structure.center.updater.strategy.CenterUpdateStrategy;
+import core.session.Properties;
+import core.session.Session;
+import core.session.enums.CreatingMode;
 import java.awt.Point;
+import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.Optional;
 
@@ -19,9 +25,15 @@ public class StructureControlImpl implements StructureControl {
 
     @Override
     public Optional<Structure> findStructureOnPosition(Point position) {
-        return structureContainer.getAllStructures().stream()
-                .filter(x -> x.isInside(position))
-                .findFirst();
+        List<Structure> list = structureContainer.getAllStructures();
+        ListIterator<Structure> listIterator = list.listIterator(list.size());
+        while (listIterator.hasPrevious()) {
+            Structure structure = listIterator.previous();
+            if (structure.isInside(position)) {
+                return Optional.of(structure);
+            }
+        }
+        return Optional.empty();
     }
 
     @Override
@@ -76,5 +88,24 @@ public class StructureControlImpl implements StructureControl {
         relativePoint.setLocation(newPoint);
         centerUpdateStrategy.getCenterPointUpdater(structure.getType()).update(structure);
         App.getSession().getSceneControl().update();
+    }
+
+    @Override
+    public void chooseStructure(Structure structure) {
+        Session session = App.getSession();
+        DynamicToolsPanel dynamicToolsPanel = session.getMainWindow().getDynamicToolsPanel();
+        Properties properties = session.getProperties();
+        properties.setCreatingMode(CreatingMode.MOVING);
+        properties.setChosenStructure(structure);
+        dynamicToolsPanel.fillUp(structureToSettingComponents.convert(structure));
+        dynamicToolsPanel.open();
+        session.getSceneControl().update();
+        raiseStructureInContainer(structure);
+    }
+
+    private void raiseStructureInContainer(Structure structure) {
+        List<Structure> allStructures = structureContainer.getAllStructures();
+        allStructures.remove(structure);
+        allStructures.add(structure);
     }
 }

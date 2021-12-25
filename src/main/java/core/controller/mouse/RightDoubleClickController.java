@@ -13,8 +13,6 @@ import java.awt.Point;
 import java.util.Optional;
 
 public class RightDoubleClickController implements MouseController {
-    private final StructureToSettingComponents structureToSettingComponents
-            = new StructureToSettingComponentsImpl();
 
     @Override
     public void apply(Point point) {
@@ -23,12 +21,8 @@ public class RightDoubleClickController implements MouseController {
                 .getStructureControl().findStructureOnPosition(point);
         DynamicToolsPanel dynamicToolsPanel = session.getMainWindow().getDynamicToolsPanel();
         if (optionalStructure.isPresent()) {
-            Properties properties = session.getProperties();
-            properties.setCreatingMode(CreatingMode.MOVING);
-            properties.setChosenStructure(optionalStructure.get());
-            dynamicToolsPanel.fillUp(structureToSettingComponents.convert(optionalStructure.get()));
-            dynamicToolsPanel.open();
-            session.getSceneControl().update();
+            session.getSceneControl().getScene()
+                    .getStructureControl().chooseStructure(optionalStructure.get());
         } else {
             dynamicToolsPanel.close();
             session.getProperties().setChosenStructure(null);
