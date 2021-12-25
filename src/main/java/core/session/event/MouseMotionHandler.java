@@ -1,8 +1,9 @@
-package core.session.handlers;
+package core.session.event;
 
 import core.App;
 import core.controller.MouseController;
 import core.controller.mouse.HighlightingController;
+import core.controller.mouse.ImageExtractController;
 import core.controller.mouse.MouseMovingController;
 import core.controller.mouse.StructureCreatingController;
 import core.controller.mouse.StructureMovingController;
@@ -15,11 +16,13 @@ public class MouseMotionHandler implements java.awt.event.MouseMotionListener {
     private final MouseController structureMovingController;
     private final MouseController structureCreatingController;
     private final MouseController mouseMovingController;
+    private final MouseController imageExtractController;
 
     public MouseMotionHandler() {
         highlightingController = new HighlightingController();
         structureCreatingController = new StructureCreatingController();
         structureMovingController = new StructureMovingController();
+        imageExtractController = new ImageExtractController();
         mouseMovingController = new MouseMovingController();
     }
 
@@ -33,6 +36,9 @@ public class MouseMotionHandler implements java.awt.event.MouseMotionListener {
                 break;
             case MOVING:
                 structureMovingController.apply(point);
+                break;
+            case IMAGE_EXTRACT:
+                imageExtractController.apply(point);
                 break;
             default:
                 structureCreatingController.apply(point);

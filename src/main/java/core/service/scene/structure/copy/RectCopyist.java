@@ -1,10 +1,10 @@
 package core.service.scene.structure.copy;
 
-import java.awt.Point;
-import java.util.Map;
 import core.Config;
 import core.model.Rect;
 import core.model.Structure;
+import java.awt.Point;
+import java.util.Map;
 
 public class RectCopyist implements StructureCopyist {
     @Override

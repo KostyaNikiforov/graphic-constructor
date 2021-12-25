@@ -1,7 +1,7 @@
 package core.service.convetror;
 
 import core.model.Structure;
-import core.session.handlers.SettingFieldsListener;
+import core.session.event.SettingFieldsListener;
 import java.awt.GridLayout;
 import java.awt.TextField;
 import java.awt.event.TextListener;

@@ -3,7 +3,7 @@ package core.gui.models.panels.left;
 import core.Config;
 import core.controller.Controller;
 import core.gui.models.ElementsGroup;
-import core.session.handlers.PanelButtonActionHandler;
+import core.session.event.PanelButtonActionHandler;
 import java.awt.Color;
 import java.util.HashMap;
 import java.util.Map;

@@ -9,7 +9,7 @@ public class HighlightingController implements MouseController {
     @Override
     public void apply(Point point) {
         Session session = App.getSession();
-        App.getSession().getSceneControl().getScene().getDrawer()
+        session.getSceneControl().getScene().getDrawer()
                 .drawHighlightingRect(
                         session.getProperties().getStartPoint(),
                         point

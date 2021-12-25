@@ -5,5 +5,6 @@ public enum CreatingMode {
     HIGHLIGHTING,
     CIRCLE,
     LINE,
-    RECT;
+    RECT,
+    IMAGE_EXTRACT;
 }

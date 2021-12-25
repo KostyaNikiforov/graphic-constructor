@@ -4,11 +4,7 @@ import core.App;
 import core.controller.MouseController;
 import core.gui.models.panels.right.DynamicToolsPanel;
 import core.model.Structure;
-import core.service.convetror.StructureToSettingComponents;
-import core.service.convetror.StructureToSettingComponentsImpl;
-import core.session.Properties;
 import core.session.Session;
-import core.session.enums.CreatingMode;
 import java.awt.Point;
 import java.util.Optional;
 

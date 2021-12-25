@@ -19,6 +19,7 @@ import core.controller.mouse.RightPressController;
 import core.controller.mouse.RightReleaseController;
 import core.controller.panel.CircleModeController;
 import core.controller.panel.HighlightModeController;
+import core.controller.panel.ImageExtractModeController;
 import core.controller.panel.LineModeButton;
 import core.controller.panel.MoveModeController;
 import core.controller.panel.RectModeController;
@@ -45,6 +46,8 @@ import java.util.Map;
 import javax.swing.ImageIcon;
 
 public class Config {
+    public static final String DEFAULT_IMAGE_FILE_PATH = "src/main/resources/image.png";
+
     public static final int WINDOW_HEIGHT = (int) (Machine.getScreenHeight() * 0.7);
     public static final int WINDOW_WIDTH = (int) (Machine.getScreenWidth() * 0.7);
     public static final int WINDOW_POSITION_X =
@@ -87,11 +90,14 @@ public class Config {
 
     public static final LeftPanelButton[] LEFT_PANEL_BUTTONS = new LeftPanelButton[] {
             new LeftPanelButton(
+                    new ImageIcon("src/main/resources/icons/camera_icon_25x25.png"),
+                    "image_extract", new ImageExtractModeController()),
+            new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/hand_icon_25x25.png"),
                     "move", new MoveModeController()),
             new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/dashed_rect_icon_25x25.png"),
-                    "Highlight", new HighlightModeController()),
+                    "highlight", new HighlightModeController()),
             new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/line_icon_25x25.png"),
                     "line", new LineModeButton()),

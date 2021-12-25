@@ -1,4 +1,4 @@
-package core.session.handlers;
+package core.session.event;
 
 import core.Config;
 import core.controller.MouseController;

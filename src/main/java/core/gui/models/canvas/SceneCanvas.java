@@ -7,8 +7,8 @@ import core.lib.Injector;
 import core.model.Structure;
 import core.service.scene.structure.draw.strategy.DrawStrategy;
 import core.service.scene.structure.pick.strategy.PickStrategy;
-import core.session.handlers.MouseEventHandler;
-import core.session.handlers.MouseMotionHandler;
+import core.session.event.MouseEventHandler;
+import core.session.event.MouseMotionHandler;
 import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -38,8 +38,6 @@ public class SceneCanvas extends Canvas implements ElementsGroup {
     }
 
     public void drawStructure(Structure structure, Graphics2D graphics2D) {
-        graphics2D.setStroke(new BasicStroke(structure.getStroke()));
-        graphics2D.setColor(structure.getColor());
         drawStrategy.getStructureDrawer(structure.getType()).draw(structure, graphics2D);
     }
 

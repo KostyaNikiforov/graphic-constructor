@@ -20,21 +20,20 @@ public class Drawer implements Highlighting, Creating {
     }
 
     @Override
-    public void drawHighlightingRect(Point pointStart, Point pointEnd) {
+    public void drawHighlightingRect(Point startPoint, Point endPoint) {
         Graphics2D g = (Graphics2D) sceneCanvas.getGraphics().create();
         sceneCanvas.update(g);
         g.setStroke(Config.BASIC_STROKE);
         g.setColor(Color.GREEN);
-        Point startPoint = App.getSession().getProperties().getStartPoint();
         g.drawRect(
-                startPoint.getX() < pointEnd.getX()
+                startPoint.getX() < endPoint.getX()
                         ? (int) startPoint.getX()
-                        : (int) pointEnd.getX(),
-                startPoint.getY() < pointEnd.getY()
+                        : (int) endPoint.getX(),
+                startPoint.getY() < endPoint.getY()
                         ? (int) startPoint.getY()
-                        : (int) pointEnd.getY(),
-                (int) Math.abs(pointEnd.getX() - startPoint.getX()),
-                (int) Math.abs(pointEnd.getY() - startPoint.getY())
+                        : (int) endPoint.getY(),
+                (int) Math.abs(endPoint.getX() - startPoint.getX()),
+                (int) Math.abs(endPoint.getY() - startPoint.getY())
         );
     }
 

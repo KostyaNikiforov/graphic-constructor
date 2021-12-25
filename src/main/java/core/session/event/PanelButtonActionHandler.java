@@ -1,4 +1,4 @@
-package core.session.handlers;
+package core.session.event;
 
 import core.controller.Controller;
 import java.awt.event.ActionEvent;
