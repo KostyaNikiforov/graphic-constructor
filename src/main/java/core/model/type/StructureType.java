@@ -5,7 +5,8 @@ import core.session.enums.CreatingMode;
 public enum StructureType {
     CIRCLE("Circle", CreatingMode.CIRCLE),
     RECT("Rect", CreatingMode.RECT),
-    LINE("Line", CreatingMode.LINE);
+    LINE("Line", CreatingMode.LINE),
+    TEXT("Text", CreatingMode.TEXT);
 
     private String type;
     private CreatingMode creatingMode;

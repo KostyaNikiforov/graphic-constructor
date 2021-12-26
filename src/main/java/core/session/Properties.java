@@ -1,5 +1,6 @@
 package core.session;
 
+import core.App;
 import core.Config;
 import core.model.Structure;
 import core.session.enums.CreatingMode;
@@ -26,6 +27,8 @@ public class Properties {
 
     public void setCreatingMode(CreatingMode creatingMode) {
         this.creatingMode = creatingMode;
+        App.getSession().getMainWindow()
+                .getLeftPanel().updateChosenTool(creatingMode);
     }
 
     public Color getCurrentColor() {

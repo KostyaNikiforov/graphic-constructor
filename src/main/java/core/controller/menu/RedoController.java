@@ -14,6 +14,6 @@ public class RedoController implements Controller {
         logger.info("Redo function is used.");
         App.getSession().getSceneControl().redo();
         App.getSession().getSceneControl().update();
-        JOptionPane.showMessageDialog(null, "Doesn't work yet.");
+        //JOptionPane.showMessageDialog(null, "Doesn't work yet.");
     }
 }

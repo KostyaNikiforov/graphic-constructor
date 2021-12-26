@@ -6,7 +6,7 @@ import java.awt.Point;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Structure implements Searchable {
+public abstract class Structure implements Searchable, Cloneable {
     protected Point centerPosition;
     protected Color color;
     protected int stroke;
@@ -52,7 +52,16 @@ public abstract class Structure implements Searchable {
     }
 
     @Override
-    public String toString() {
-        return type.toString();
+    public Structure clone() {
+        try {
+            Structure clone = (Structure) super.clone();
+            clone.centerPosition = (Point) centerPosition.clone();
+            for (Map.Entry<String, Point> entry : relativePoints.entrySet()) {
+                clone.relativePoints.put(entry.getKey(), (Point) entry.getValue().clone());
+            }
+            return clone;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
+        }
     }
 }

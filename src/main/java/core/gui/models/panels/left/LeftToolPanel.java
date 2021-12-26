@@ -3,10 +3,17 @@ package core.gui.models.panels.left;
 import core.Config;
 import core.controller.Controller;
 import core.gui.models.ElementsGroup;
+import core.session.enums.CreatingMode;
 import core.session.event.PanelButtonActionHandler;
 import java.awt.Color;
+import java.awt.Component;
+import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import javax.lang.model.element.Element;
+import javax.swing.AbstractButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
@@ -15,13 +22,11 @@ import javax.swing.border.BevelBorder;
 public class LeftToolPanel extends JToolBar implements ElementsGroup {
     private final PanelButtonActionHandler buttonActionHandler;
     private final Map<String, Controller> panelControllerMap;
-    private final ButtonGroup buttonGroup;
 
     public LeftToolPanel() {
         super(JToolBar.VERTICAL);
         panelControllerMap = new HashMap<>();
         buttonActionHandler = new PanelButtonActionHandler(panelControllerMap);
-        buttonGroup = new ButtonGroup();
     }
 
     public void create() {
@@ -37,9 +42,21 @@ public class LeftToolPanel extends JToolBar implements ElementsGroup {
             button.setActionCommand(leftPanelButton.getCommand());
             button.addActionListener(buttonActionHandler);
             panelControllerMap.put(leftPanelButton.getCommand(), leftPanelButton.getController());
-            buttonGroup.add(button);
-            add(button);
+            addButton(button);
+
         }
         setBackground(Config.LEFT_PANEL_BG_COLOR);
+    }
+
+
+    private void addButton(JToggleButton button) {
+        add(button);
+    }
+
+    public void updateChosenTool(CreatingMode creatingMode) {
+        for (Component component : getComponents()) {
+            JToggleButton button = (JToggleButton) component;
+            button.setSelected(button.getActionCommand().equals(creatingMode.toString()));
+        }
     }
 }

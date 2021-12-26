@@ -6,5 +6,5 @@ public enum CreatingMode {
     CIRCLE,
     LINE,
     RECT,
-    IMAGE_EXTRACT;
+    IMAGE_EXTRACT, TEXT;
 }

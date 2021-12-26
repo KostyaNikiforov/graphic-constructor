@@ -1,6 +1,7 @@
 package core.model;
 
 import core.model.type.StructureType;
+import core.utils.MathFunctions;
 import java.awt.Point;
 
 public class Line extends Structure {
@@ -12,8 +13,8 @@ public class Line extends Structure {
         relativePoints.put("end", endPosition);
     }
 
-    public double getLength() {
-        return relativePoints.get("start").distance(relativePoints.get("end"));
+    public int getLength() {
+        return (int) relativePoints.get("start").distance(relativePoints.get("end"));
     }
 
     @Override

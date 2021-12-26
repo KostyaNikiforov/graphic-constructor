@@ -24,6 +24,7 @@ public class Session {
         processesStrategy.getProcessHandler(properties.getCreatingMode())
                 .finish(point);
         sceneControl.update();
+        //sceneControl.saveState();
     }
 
     public void startProcess(Point point) {

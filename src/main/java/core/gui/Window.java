@@ -87,4 +87,8 @@ public class Window extends JFrame {
     public DynamicToolsPanel getDynamicToolsPanel() {
         return (DynamicToolsPanel) rightPanel;
     }
+
+    public LeftToolPanel getLeftPanel() {
+        return (LeftToolPanel) leftPanel;
+    }
 }

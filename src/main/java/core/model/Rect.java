@@ -1,6 +1,7 @@
 package core.model;
 
 import core.model.type.StructureType;
+import core.service.scene.structure.center.updater.RectCenterUpdater;
 import java.awt.Point;
 
 public class Rect extends Structure {
@@ -15,7 +16,9 @@ public class Rect extends Structure {
     }
 
     public void setWidth(int width) {
-
+        Point start = relativePoints.get("start");
+        relativePoints.get("end").setLocation(start.x + width, relativePoints.get("end").y);
+        new RectCenterUpdater().update(this);
     }
 
     public int getHeight() {
@@ -23,6 +26,9 @@ public class Rect extends Structure {
     }
 
     public void setHeight(int height) {
+        Point start = relativePoints.get("start");
+        relativePoints.get("end").setLocation(relativePoints.get("end").x, start.y + height);
+        new RectCenterUpdater().update(this);
     }
 
     public Point getStartPoint() {

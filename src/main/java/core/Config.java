@@ -55,7 +55,7 @@ public class Config {
     public static final int WINDOW_POSITION_Y =
             Machine.getScreenHeight() / 2 - Config.WINDOW_HEIGHT / 2;
     public static final String TITLE = "Pain Extreme 3000";
-    public static final String MOUSE_POSITION_PATTERN = "X: %d; Y: %d;";
+    public static final String MOUSE_POSITION_PATTERN = "Mouse position: X: %d; Y: %d;";
     public static final String USAGE_MEMORY_PATTERN = "Usage memory: %s";
     public static final Color LEFT_PANEL_BG_COLOR = Color.DARK_GRAY;
     public static final Color RIGHT_PANEL_BG_COLOR = Color.WHITE;
@@ -91,22 +91,22 @@ public class Config {
     public static final LeftPanelButton[] LEFT_PANEL_BUTTONS = new LeftPanelButton[] {
             new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/camera_icon_25x25.png"),
-                    "image_extract", new ImageExtractModeController()),
+                    CreatingMode.IMAGE_EXTRACT.toString(), new ImageExtractModeController()),
             new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/hand_icon_25x25.png"),
-                    "move", new MoveModeController()),
+                    CreatingMode.MOVING.toString(), new MoveModeController()),
             new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/dashed_rect_icon_25x25.png"),
-                    "highlight", new HighlightModeController()),
+                    CreatingMode.HIGHLIGHTING.toString(), new HighlightModeController()),
             new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/line_icon_25x25.png"),
-                    "line", new LineModeButton()),
+                    CreatingMode.LINE.toString(), new LineModeButton()),
             new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/circle_icon_25x25.png"),
-                    "circle", new CircleModeController()),
+                    CreatingMode.CIRCLE.toString(), new CircleModeController()),
             new LeftPanelButton(
                     new ImageIcon("src/main/resources/icons/rect_icon_25x25.png"),
-                    "rect", new RectModeController())
+                    CreatingMode.RECT.toString(), new RectModeController())
     };
 
     public static final ColorButton[] COLOR_BUTTONS = new ColorButton[] {
@@ -117,6 +117,8 @@ public class Config {
             new ColorButton(Color.DARK_GRAY, "dark_grey", new DarkGreyController()),
             new ColorButton(Color.WHITE, "white", new WhiteController()),
     };
+    public static final int TEXT_VISIBILITY_RADIUS = 30;
+    public static int MAX_HISTORY_SIZE = 10;
 
     static {
         fillUpStructureCreatorMap();
@@ -125,12 +127,12 @@ public class Config {
     }
 
     private static void fillUpStructureSettingControllerMap() {
-        STRUCTURE_SETTING_CONTROLLER_MAP.put("radius", new RadiusController());
-        STRUCTURE_SETTING_CONTROLLER_MAP.put("height", new HeightController());
-        STRUCTURE_SETTING_CONTROLLER_MAP.put("width", new WidthController());
-        STRUCTURE_SETTING_CONTROLLER_MAP.put("x", new XController());
-        STRUCTURE_SETTING_CONTROLLER_MAP.put("y", new YController());
-        STRUCTURE_SETTING_CONTROLLER_MAP.put("stroke", new StrokeController());
+        STRUCTURE_SETTING_CONTROLLER_MAP.put("Radius", new RadiusController());
+        STRUCTURE_SETTING_CONTROLLER_MAP.put("Height", new HeightController());
+        STRUCTURE_SETTING_CONTROLLER_MAP.put("Width", new WidthController());
+        STRUCTURE_SETTING_CONTROLLER_MAP.put("X", new XController());
+        STRUCTURE_SETTING_CONTROLLER_MAP.put("Y", new YController());
+        STRUCTURE_SETTING_CONTROLLER_MAP.put("Stroke", new StrokeController());
     }
 
     private static void fillUpMouseControllerMap() {

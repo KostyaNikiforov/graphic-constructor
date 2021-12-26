@@ -1,5 +1,7 @@
 package core.service.convetror;
 
+import core.model.Circle;
+import core.model.Rect;
 import core.model.Structure;
 import core.session.event.SettingFieldsListener;
 import java.awt.GridLayout;
@@ -16,10 +18,20 @@ public class StructureToSettingComponentsImpl implements StructureToSettingCompo
     @Override
     public List<JPanel> convert(Structure structure) {
         List<JPanel> components = new ArrayList<>();
-        components.add(valuesToSettingComponent("type", structure.toString()));
-        components.add(valuesToSettingComponent("x", (int) structure.getCenterPosition().getX()));
-        components.add(valuesToSettingComponent("y", (int) structure.getCenterPosition().getY()));
-        components.add(valuesToSettingComponent("stroke", (int) structure.getStroke()));
+        String type = structure.getType().toString();
+        components.add(valuesToSettingComponent("Type", type));
+        components.add(valuesToSettingComponent("X", structure.getCenterPosition().x));
+        components.add(valuesToSettingComponent("Y", structure.getCenterPosition().y));
+        components.add(valuesToSettingComponent("Stroke", structure.getStroke()));
+        // TODO: Needs refactor
+        if (type.equals("Rect")) {
+            Rect rect = (Rect) structure;
+            components.add(valuesToSettingComponent("Width", rect.getWidth()));
+            components.add(valuesToSettingComponent("Height", rect.getHeight()));
+        } else if (type.equals("Circle")) {
+            Circle circle = (Circle) structure;
+            components.add(valuesToSettingComponent("Radius", circle.getRadius()));
+        }
         return components;
     }
 

@@ -8,4 +8,6 @@ public interface StructureControl extends StructureSearcher,
     void remove(Structure structure);
 
     StructureContainer getStructureContainer();
+
+    void updateContainer(StructureContainer version);
 }

@@ -10,8 +10,8 @@ public class Circle extends Structure {
         relativePoints.put("radius", radiusPoint);
     }
 
-    public double getRadius() {
-        return centerPosition.distance(relativePoints.get("radius"));
+    public int getRadius() {
+        return (int) centerPosition.distance(relativePoints.get("radius"));
     }
 
     public void setRadius(int radius) {

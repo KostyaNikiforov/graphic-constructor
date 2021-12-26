@@ -63,6 +63,11 @@ public class StructureControlImpl implements StructureControl {
     }
 
     @Override
+    public void updateContainer(StructureContainer version) {
+        structureContainer = version;
+    }
+
+    @Override
     public void modify(Structure structure, Point movedPoint) {
         Map<String, Point> relativePoints = structure.getRelativePoints();
         Optional<Point> optionalPoint
