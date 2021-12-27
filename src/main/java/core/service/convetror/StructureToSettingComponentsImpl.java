@@ -20,7 +20,7 @@ public class StructureToSettingComponentsImpl implements StructureToSettingCompo
     @Override
     public List<JPanel> convert(Structure structure) {
         List<JPanel> components = new ArrayList<>();
-        String type = structure.getType().toString();
+        String type = structure.getCreatingMode().toString();
         components.add(valuesToSettingComponent("Type", type));
         components.add(valuesToSettingComponent("X", structure.getCenterPosition().x));
         components.add(valuesToSettingComponent("Y", structure.getCenterPosition().y));

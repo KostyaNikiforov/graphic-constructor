@@ -1,6 +1,6 @@
 package core.model;
 
-import core.model.type.StructureType;
+import core.session.enums.CreatingMode;
 import java.awt.Color;
 import java.awt.Point;
 import java.util.HashMap;
@@ -11,12 +11,12 @@ public abstract class Structure implements Searchable, Cloneable {
     protected Point centerPosition;
     protected Color color;
     protected int strokeWidth;
-    private StructureType type;
+    private CreatingMode creatingMode;
 
-    public Structure(Point centerPosition, StructureType type) {
+    public Structure(Point centerPosition, CreatingMode type) {
         relativePoints = new HashMap<>();
         this.centerPosition = centerPosition;
-        this.type = type;
+        this.creatingMode = type;
     }
 
     public Point getCenterPosition() {
@@ -43,12 +43,12 @@ public abstract class Structure implements Searchable, Cloneable {
         this.color = color;
     }
 
-    public StructureType getType() {
-        return type;
+    public CreatingMode getCreatingMode() {
+        return creatingMode;
     }
 
-    protected void setType(StructureType type) {
-        this.type = type;
+    protected void setCreatingMode(CreatingMode creatingMode) {
+        this.creatingMode = creatingMode;
     }
 
     public Map<String, Point> getRelativePoints() {

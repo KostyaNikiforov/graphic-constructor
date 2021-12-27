@@ -6,8 +6,8 @@ import core.model.Structure;
 import core.service.image.save.ImageFileSaver;
 import core.service.image.save.PngImageFileSaver;
 import core.service.scene.structure.StructureContainer;
-import core.service.scene.structure.draw.strategy.DrawStrategy;
-import core.service.scene.structure.draw.strategy.RelativeDrawStrategy;
+import core.service.scene.structure.processing.draw.RelativeDrawStrategy;
+import core.service.scene.structure.processing.strategy.StructureProcessingStrategy;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class ImageCreatorImpl implements ImageCreator {
     private RelativeDrawStrategy relativeDrawStrategy
-            = (RelativeDrawStrategy) App.serviceInjector.getInstance(DrawStrategy.class);
+            = (RelativeDrawStrategy) App.injector.getInstance(StructureProcessingStrategy.class);
     private ImageFileSaver imageFileSaver;
 
     {
@@ -39,8 +39,8 @@ public class ImageCreatorImpl implements ImageCreator {
     private void drawStructuresOnImage(List<Structure> structures,
                                        Graphics2D graphics, Point basePoint) {
         for (Structure structure : structures) {
-            relativeDrawStrategy.getRelativeStructureDrawer(structure.getType())
-                    .draw(structure, graphics, basePoint);
+            relativeDrawStrategy.getRelativeStructureDrawer(structure.getCreatingMode())
+                    .relativeDraw(structure, graphics, basePoint);
         }
     }
 }

@@ -1,12 +1,12 @@
 package core.model;
 
-import core.model.type.StructureType;
+import core.session.enums.CreatingMode;
 import core.utils.MathFunctions;
 import java.awt.Point;
 
 public class Circle extends Structure {
     public Circle(Point centerPosition, Point radiusPoint) {
-        super(centerPosition, StructureType.CIRCLE);
+        super(centerPosition, CreatingMode.CIRCLE);
         relativePoints.put("radius", radiusPoint);
     }
 

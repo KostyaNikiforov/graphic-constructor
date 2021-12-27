@@ -34,14 +34,10 @@ import core.controller.setting.TextSizeContentController;
 import core.controller.setting.WidthController;
 import core.controller.setting.XController;
 import core.controller.setting.YController;
-import core.gui.models.menu.items.MenuItem;
-import core.gui.models.menu.items.SubMenuItem;
-import core.gui.models.panels.bottom.ColorButton;
-import core.gui.models.panels.left.LeftPanelButton;
-import core.service.scene.structure.create.CircleCreator;
-import core.service.scene.structure.create.LineCreator;
-import core.service.scene.structure.create.RectCreator;
-import core.service.scene.structure.create.StructureCreator;
+import core.gui.sections.bottom.ColorButton;
+import core.gui.sections.left.LeftPanelButton;
+import core.gui.sections.menu.items.MenuItem;
+import core.gui.sections.menu.items.SubMenuItem;
 import core.session.enums.CreatingMode;
 import core.utils.sys.Machine;
 import java.awt.BasicStroke;
@@ -65,7 +61,6 @@ public class Config {
     public static final Color LEFT_PANEL_BG_COLOR = Color.DARK_GRAY;
     public static final Color RIGHT_PANEL_BG_COLOR = Color.WHITE;
     public static final Color BOTTOM_PANEL_BG_COLOR = Color.WHITE;
-    public static final Color PANEL_BG_COLOR = Color.GRAY;
     public static final Color CANVAS_BG_COLOR = Color.GRAY;
     public static final CreatingMode DEFAULT_CREATING_MODE = CreatingMode.HIGHLIGHTING;
     public static final Color DEFAULT_COLOR = Color.BLACK;
@@ -75,8 +70,6 @@ public class Config {
     public static final BasicStroke BASIC_STROKE
             = new BasicStroke(2, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,
             0, new float[]{9}, 0);
-    public static final Map<CreatingMode, StructureCreator> STRUCTURE_CREATOR_MAP
-            = new HashMap<>();
     public static final Map<String, MouseController> MOUSE_CONTROLLER_MAP
             = new HashMap<>();
     public static final Map<String, SettingController> STRUCTURE_SETTING_CONTROLLER_MAP
@@ -135,7 +128,6 @@ public class Config {
     public static final int MAX_HISTORY_SIZE = 10;
 
     static {
-        fillUpStructureCreatorMap();
         fillUpMouseControllerMap();
         fillUpStructureSettingControllerMap();
     }
@@ -157,11 +149,5 @@ public class Config {
         MOUSE_CONTROLLER_MAP.put("right_press", new RightPressController());
         MOUSE_CONTROLLER_MAP.put("right_release", new RightReleaseController());
         MOUSE_CONTROLLER_MAP.put("middle_click", new MiddleClickController());
-    }
-
-    private static void fillUpStructureCreatorMap() {
-        STRUCTURE_CREATOR_MAP.put(CreatingMode.CIRCLE, new CircleCreator());
-        STRUCTURE_CREATOR_MAP.put(CreatingMode.LINE, new LineCreator());
-        STRUCTURE_CREATOR_MAP.put(CreatingMode.RECT, new RectCreator());
     }
 }

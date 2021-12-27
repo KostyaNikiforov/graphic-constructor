@@ -1,15 +1,15 @@
 package core.gui;
 
 import core.Config;
-import core.gui.models.ElementsGroup;
-import core.gui.models.canvas.SceneCanvas;
-import core.gui.models.menu.MainMenu;
-import core.gui.models.panels.bottom.BottomPanel;
-import core.gui.models.panels.bottom.MemoryInfoText;
-import core.gui.models.panels.bottom.MousePositionText;
-import core.gui.models.panels.left.LeftToolPanel;
-import core.gui.models.panels.right.DynamicToolsPanel;
-import core.gui.models.panels.right.RightSettingsPanel;
+import core.gui.sections.ElementsGroup;
+import core.gui.sections.bottom.BottomPanel;
+import core.gui.sections.bottom.MemoryInfoText;
+import core.gui.sections.bottom.MousePositionText;
+import core.gui.sections.canvas.SceneCanvas;
+import core.gui.sections.left.LeftToolPanel;
+import core.gui.sections.menu.MainMenu;
+import core.gui.sections.right.DynamicToolsPanel;
+import core.gui.sections.right.RightSettingsPanel;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Container;

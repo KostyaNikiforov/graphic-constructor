@@ -1,13 +1,13 @@
 package core.model;
 
-import core.model.type.StructureType;
+import core.session.enums.CreatingMode;
 import java.awt.Point;
 
 public class Line extends Structure {
     private static final int VISIBILITY_RADIUS = 10;
 
     public Line(Point centerPosition, Point startPosition, Point endPosition) {
-        super(centerPosition, StructureType.LINE);
+        super(centerPosition, CreatingMode.LINE);
         relativePoints.put("start", startPosition);
         relativePoints.put("end", endPosition);
     }

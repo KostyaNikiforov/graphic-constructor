@@ -2,17 +2,17 @@ package core.service.processe;
 
 import core.App;
 import core.Config;
+import core.gui.dialog.file.FileDialogImpl;
+import core.gui.dialog.file.FileSaver;
 import core.service.image.create.ImageCreator;
-import core.service.image.dialog.save.FileSaver;
 import java.awt.Point;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 public class ImageExtracting implements ProcessHandler {
-    private ImageCreator imageCreator
-            = (ImageCreator) App.serviceInjector.getInstance(ImageCreator.class);
-    private FileSaver fileSaver
-            = (FileSaver) App.serviceInjector.getInstance(FileSaver.class);
+    private final ImageCreator imageCreator
+            = (ImageCreator) App.injector.getInstance(ImageCreator.class);
+    private final FileSaver fileSaver = new FileDialogImpl();
 
     @Override
     public void finish(Point point) {

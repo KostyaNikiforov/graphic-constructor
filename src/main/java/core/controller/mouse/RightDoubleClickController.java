@@ -2,7 +2,7 @@ package core.controller.mouse;
 
 import core.App;
 import core.controller.MouseController;
-import core.gui.models.panels.right.DynamicToolsPanel;
+import core.gui.sections.right.DynamicToolsPanel;
 import core.model.Structure;
 import core.session.Session;
 import java.awt.Point;

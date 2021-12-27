@@ -2,10 +2,10 @@ package core.service.scene;
 
 import core.App;
 import core.Config;
-import core.gui.models.canvas.SceneCanvas;
+import core.gui.sections.canvas.SceneCanvas;
 import core.model.Structure;
 import core.service.scene.structure.Extracting;
-import core.service.scene.structure.create.strategy.StructureCreateStrategy;
+import core.service.scene.structure.processing.create.StructureCreateStrategy;
 import core.session.enums.CreatingMode;
 import java.awt.BasicStroke;
 import java.awt.Color;

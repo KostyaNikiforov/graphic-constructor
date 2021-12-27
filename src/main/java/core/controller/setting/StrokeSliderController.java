@@ -2,17 +2,15 @@ package core.controller.setting;
 
 import core.App;
 import core.controller.SliderController;
-import core.model.Structure;
+import core.service.session.update.StructureUpdater;
 
 public class StrokeSliderController implements SliderController {
+    private final StructureUpdater structureUpdater
+            = (StructureUpdater) App.injector.getInstance(StructureUpdater.class);
+
     @Override
     public void apply(int value) {
-        App.getSession().getProperties()
-                .setCurrentStroke(value);
-        Structure structure = App.getSession().getProperties().getChosenStructure();
-        if (structure != null) {
-            structure.setStrokeWidth(value);
-        }
-        App.getSession().getSceneControl().update();
+        App.getSession().getProperties().setCurrentStroke(value);
+        structureUpdater.updateChosenStructureStrokeWidth(value);
     }
 }

@@ -16,7 +16,6 @@ public class SceneControlImpl implements SceneControl {
 
     @Override
     public void undo() {
-        //scene.moveToLastVersion();
         if (!scene.getStructureContainer().isEmpty()) {
             scene.getStructureContainer().getAllStructures()
                     .remove(scene.getStructureContainer().size() - 1);
@@ -25,12 +24,10 @@ public class SceneControlImpl implements SceneControl {
 
     @Override
     public void redo() {
-        //scene.moveToNextVersion();
     }
 
     @Override
     public void saveState() {
-        scene.addNewVersion();
     }
 
     @Override

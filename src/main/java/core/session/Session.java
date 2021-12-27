@@ -2,7 +2,7 @@ package core.session;
 
 import core.App;
 import core.gui.Window;
-import core.gui.models.canvas.SceneCanvas;
+import core.gui.sections.canvas.SceneCanvas;
 import core.model.Scene;
 import core.service.processe.strategy.ProcessesStrategy;
 import core.service.scene.SceneControl;
@@ -11,7 +11,7 @@ import java.awt.Point;
 
 public class Session {
     private final ProcessesStrategy processesStrategy
-            = (ProcessesStrategy) App.serviceInjector.getInstance(ProcessesStrategy.class);
+            = (ProcessesStrategy) App.injector.getInstance(ProcessesStrategy.class);
     private final Properties properties;
     private SceneControl sceneControl;
     private Window mainWindow;
@@ -24,7 +24,6 @@ public class Session {
         processesStrategy.getProcessHandler(properties.getCreatingMode())
                 .finish(point);
         sceneControl.update();
-        //sceneControl.saveState();
     }
 
     public void startProcess(Point point) {

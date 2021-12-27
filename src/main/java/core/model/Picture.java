@@ -1,8 +1,8 @@
 package core.model;
 
-import core.model.type.StructureType;
 import core.service.image.load.ImageReader;
 import core.service.image.load.ImageReaderImpl;
+import core.session.enums.CreatingMode;
 import java.awt.Image;
 import java.awt.Point;
 
@@ -16,7 +16,7 @@ public class Picture extends Rect {
 
     public Picture(Point centerPosition, Point startPoint, Point endPoint) {
         super(centerPosition, startPoint, endPoint);
-        setType(StructureType.PICTURE);
+        setCreatingMode(CreatingMode.PICTURE);
     }
 
     public Image getContent() {

@@ -3,14 +3,15 @@ package core.controller.mouse;
 import core.App;
 import core.controller.MouseController;
 import core.model.Structure;
-import core.service.scene.structure.copy.strategy.StructureCopyStrategy;
+import core.service.scene.structure.processing.copy.StructureCopyStrategy;
+import core.service.scene.structure.processing.strategy.StructureProcessingStrategy;
 import core.session.Session;
 import java.awt.Point;
 import java.util.Optional;
 
 public class MiddleClickController implements MouseController {
-    private StructureCopyStrategy structureCopyStrategy
-            = (StructureCopyStrategy) App.serviceInjector.getInstance(StructureCopyStrategy.class);
+    private final StructureCopyStrategy structureCopyStrategy
+            = (StructureCopyStrategy) App.injector.getInstance(StructureProcessingStrategy.class);
 
     @Override
     public void apply(Point point) {
@@ -28,8 +29,9 @@ public class MiddleClickController implements MouseController {
 
     private void makeCopy(Session session, Structure structure) {
         session.getSceneControl().getScene()
-                .getStructureContainer().add(structureCopyStrategy
-                        .getStructureCopyist(structure.getType()).createCopy(structure)
+                .getStructureContainer().add(
+                        structureCopyStrategy.getStructureCopyist(structure.getCreatingMode())
+                                .createCopy(structure)
         );
     }
 }

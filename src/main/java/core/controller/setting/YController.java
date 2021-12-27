@@ -9,7 +9,7 @@ import java.awt.Point;
 
 public class YController implements SettingController {
     private StructurePositioner structurePositioner
-            = (StructurePositioner) App.serviceInjector.getInstance(StructureControl.class);
+            = (StructurePositioner) App.injector.getInstance(StructureControl.class);
 
     @Override
     public void apply(String text) {

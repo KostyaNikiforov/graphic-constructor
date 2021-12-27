@@ -1,8 +1,8 @@
 package core.model;
 
 import core.Config;
-import core.model.type.StructureType;
-import core.service.scene.structure.center.updater.RectCenterUpdater;
+import core.service.scene.structure.processing.RectProcessing;
+import core.session.enums.CreatingMode;
 import java.awt.Font;
 import java.awt.Point;
 
@@ -10,7 +10,7 @@ public class Text extends Structure {
     private String content;
 
     public Text(Point centerPosition, Point startPoint, Point endPoint) {
-        super(centerPosition, StructureType.TEXT);
+        super(centerPosition, CreatingMode.TEXT);
         content = Config.DEFAULT_TEXT_CONTENT;
         relativePoints.put("start", startPoint);
         relativePoints.put("end", endPoint);
@@ -23,7 +23,7 @@ public class Text extends Structure {
     public void setSize(int size) {
         Point start = relativePoints.get("start");
         relativePoints.get("end").setLocation(relativePoints.get("end").x, start.y + size);
-        new RectCenterUpdater().update(this);
+        new RectProcessing().updateCenter(this);
     }
 
     public String getContent() {

@@ -1,16 +1,16 @@
 package core.service.processe;
 
 import core.App;
+import core.gui.dialog.file.FileDialogImpl;
+import core.gui.dialog.file.FileLoader;
 import core.model.Picture;
 import core.model.Structure;
-import core.service.image.dialog.load.FileLoader;
 import core.session.Properties;
 import java.awt.Point;
 import javax.swing.JFileChooser;
 
 public class PictureCreating implements ProcessHandler {
-    private FileLoader fileLoader
-            = (FileLoader) App.serviceInjector.getInstance(FileLoader.class);
+    private final FileLoader fileLoader = new FileDialogImpl();
 
     @Override
     public void finish(Point point) {

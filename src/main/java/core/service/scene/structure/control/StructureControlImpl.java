@@ -1,12 +1,13 @@
 package core.service.scene.structure.control;
 
 import core.App;
-import core.gui.models.panels.right.DynamicToolsPanel;
+import core.gui.sections.right.DynamicToolsPanel;
 import core.lib.Inject;
 import core.lib.Service;
 import core.model.Structure;
 import core.service.scene.structure.StructureContainer;
-import core.service.scene.structure.center.updater.strategy.CenterUpdateStrategy;
+import core.service.scene.structure.processing.center.update.CenterUpdateStrategy;
+import core.service.scene.structure.processing.strategy.StructureProcessingStrategy;
 import core.session.Properties;
 import core.session.Session;
 import core.session.enums.CreatingMode;
@@ -20,8 +21,8 @@ import java.util.Optional;
 public class StructureControlImpl implements StructureControl {
     @Inject
     private StructureContainer structureContainer;
-    @Inject
-    private CenterUpdateStrategy centerUpdateStrategy;
+    private final CenterUpdateStrategy centerUpdateStrategy
+            = (CenterUpdateStrategy) App.injector.getInstance(StructureProcessingStrategy.class);
 
     @Override
     public Optional<Structure> findStructureOnPosition(Point position) {
@@ -91,7 +92,9 @@ public class StructureControlImpl implements StructureControl {
 
     private void updateRelativePoint(Structure structure, Point relativePoint, Point newPoint) {
         relativePoint.setLocation(newPoint);
-        centerUpdateStrategy.getCenterPointUpdater(structure.getType()).update(structure);
+        centerUpdateStrategy.getCenterPointUpdater(
+                structure.getCreatingMode()).updateCenter(structure
+        );
         App.getSession().getSceneControl().update();
     }
 
@@ -105,7 +108,7 @@ public class StructureControlImpl implements StructureControl {
         dynamicToolsPanel.fillUp(structureToSettingComponents.convert(structure));
         dynamicToolsPanel.open();
         session.getSceneControl().update();
-        raiseStructureInContainer(structure);
+        //raiseStructureInContainer(structure);
     }
 
     private void raiseStructureInContainer(Structure structure) {

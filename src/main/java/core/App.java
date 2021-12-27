@@ -4,7 +4,7 @@ import core.lib.Injector;
 import core.session.Session;
 
 public class App {
-    public static final Injector serviceInjector = Injector.getInstance("core.service");
+    public static final Injector injector = Injector.getInstance("core.service");
     private static final Session session = new Session();
 
     public static void main(String[] args) {

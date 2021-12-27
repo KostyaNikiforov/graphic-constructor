@@ -1,7 +1,7 @@
 package core.service.processe.strategy;
 
 import core.lib.Service;
-import core.service.processe.DefaultProcessHandler;
+import core.service.processe.DefaultProcess;
 import core.service.processe.ImageExtracting;
 import core.service.processe.PictureCreating;
 import core.service.processe.ProcessHandler;
@@ -12,7 +12,7 @@ import java.util.Map;
 
 @Service
 public class ProcessesStrategyImpl implements ProcessesStrategy {
-    private static final ProcessHandler DEFAULT_PROCESS_HANDLER = new DefaultProcessHandler();
+    private static final ProcessHandler DEFAULT_PROCESS_HANDLER = new DefaultProcess();
     private final Map<CreatingMode, ProcessHandler> map;
 
     {
