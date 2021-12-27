@@ -3,6 +3,7 @@ package core.service.image.create;
 import core.App;
 import core.lib.Service;
 import core.model.Structure;
+import core.service.image.create.file.FileChooser;
 import core.service.image.save.ImageFileSaver;
 import core.service.image.save.PngImageFileSaver;
 import core.service.scene.structure.StructureContainer;
@@ -18,6 +19,8 @@ import java.util.List;
 public class ImageCreatorImpl implements ImageCreator {
     private RelativeDrawStrategy relativeDrawStrategy
             = (RelativeDrawStrategy) App.serviceInjector.getInstance(DrawStrategy.class);
+    private FileChooser fileChooser
+            = (FileChooser) App.serviceInjector.getInstance(FileChooser.class);
     private ImageFileSaver imageFileSaver;
 
     {
@@ -33,6 +36,7 @@ public class ImageCreatorImpl implements ImageCreator {
         StructureContainer structureContainer = App.getSession().getSceneControl()
                 .getScene().getStructureContainer();
         drawStructuresOnImage(structureContainer.getAllStructures(), graphics, startPoint);
+        filePath = fileChooser.openChooseWindow();
         imageFileSaver.save(bufferedImage, new File(filePath));
     }
 

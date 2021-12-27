@@ -16,7 +16,7 @@ public class CircleCopyist implements StructureCopyist {
                 new Point(endPoint.x + shift, endPoint.y + shift)
         );
         circle.setColor(structure.getColor());
-        circle.setStroke(structure.getStroke());
+        circle.setStrokeWidth(structure.getStrokeWidth());
         return circle;
     }
 }

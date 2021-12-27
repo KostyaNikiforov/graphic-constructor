@@ -4,7 +4,6 @@ import core.App;
 import core.controller.Controller;
 import core.model.Rect;
 import core.model.Structure;
-import javax.swing.JOptionPane;
 
 public class TestController implements Controller {
     @Override

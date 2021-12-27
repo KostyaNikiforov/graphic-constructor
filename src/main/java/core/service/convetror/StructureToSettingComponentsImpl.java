@@ -3,6 +3,7 @@ package core.service.convetror;
 import core.model.Circle;
 import core.model.Rect;
 import core.model.Structure;
+import core.model.Text;
 import core.session.event.SettingFieldsListener;
 import java.awt.GridLayout;
 import java.awt.TextField;
@@ -22,7 +23,7 @@ public class StructureToSettingComponentsImpl implements StructureToSettingCompo
         components.add(valuesToSettingComponent("Type", type));
         components.add(valuesToSettingComponent("X", structure.getCenterPosition().x));
         components.add(valuesToSettingComponent("Y", structure.getCenterPosition().y));
-        components.add(valuesToSettingComponent("Stroke", structure.getStroke()));
+        components.add(valuesToSettingComponent("Stroke", structure.getStrokeWidth()));
         // TODO: Needs refactor
         if (type.equals("Rect")) {
             Rect rect = (Rect) structure;
@@ -31,6 +32,9 @@ public class StructureToSettingComponentsImpl implements StructureToSettingCompo
         } else if (type.equals("Circle")) {
             Circle circle = (Circle) structure;
             components.add(valuesToSettingComponent("Radius", circle.getRadius()));
+        } else if (type.equals("Text")) {
+            Text text = (Text) structure;
+            components.add(valuesToSettingComponent("Text", text.getContent()));
         }
         return components;
     }

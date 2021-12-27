@@ -6,6 +6,7 @@ import core.service.scene.structure.create.CircleCreator;
 import core.service.scene.structure.create.LineCreator;
 import core.service.scene.structure.create.RectCreator;
 import core.service.scene.structure.create.StructureCreator;
+import core.service.scene.structure.create.TextCreator;
 import core.session.enums.CreatingMode;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,6 +20,7 @@ public class StructureCreateStrategyImpl implements StructureCreateStrategy {
         structureCreatorMap.put(CreatingMode.CIRCLE, new CircleCreator());
         structureCreatorMap.put(CreatingMode.LINE, new LineCreator());
         structureCreatorMap.put(CreatingMode.RECT, new RectCreator());
+        structureCreatorMap.put(CreatingMode.TEXT, new TextCreator());
     }
 
     @Override

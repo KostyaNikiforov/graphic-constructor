@@ -14,7 +14,7 @@ public class LineCreator implements StructureCreator {
                 endPosition
         );
         line.setColor(App.getSession().getProperties().getCurrentColor());
-        line.setStroke(App.getSession().getProperties().getCurrentStroke());
+        line.setStrokeWidth(App.getSession().getProperties().getCurrentStrokeWidth());
         return line;
     }
 }

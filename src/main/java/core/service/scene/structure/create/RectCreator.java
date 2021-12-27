@@ -16,7 +16,7 @@ public class RectCreator implements StructureCreator {
                 endPosition
         );
         rect.setColor(App.getSession().getProperties().getCurrentColor());
-        rect.setStroke(App.getSession().getProperties().getCurrentStroke());
+        rect.setStrokeWidth(App.getSession().getProperties().getCurrentStrokeWidth());
         return rect;
     }
 }

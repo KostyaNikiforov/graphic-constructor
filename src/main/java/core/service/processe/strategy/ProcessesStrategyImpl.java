@@ -20,6 +20,7 @@ public class ProcessesStrategyImpl implements ProcessesStrategy {
         map.put(CreatingMode.CIRCLE, structureCreating);
         map.put(CreatingMode.RECT, structureCreating);
         map.put(CreatingMode.LINE, structureCreating);
+        map.put(CreatingMode.TEXT, structureCreating);
         map.put(CreatingMode.IMAGE_EXTRACT, new ImageExtracting());
 
     }

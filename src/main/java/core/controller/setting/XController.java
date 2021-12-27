@@ -1,11 +1,11 @@
 package core.controller.setting;
 
-import java.awt.Point;
 import core.App;
 import core.controller.SettingController;
 import core.model.Structure;
 import core.service.scene.structure.control.StructureControl;
 import core.service.scene.structure.control.StructurePositioner;
+import java.awt.Point;
 
 public class XController implements SettingController {
     private StructurePositioner structurePositioner

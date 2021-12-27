@@ -20,7 +20,7 @@ public class LineCopyist implements StructureCopyist {
                 new Point(endPoint.x + shift, endPoint.y + shift)
         );
         line.setColor(structure.getColor());
-        line.setStroke(structure.getStroke());
+        line.setStrokeWidth(structure.getStrokeWidth());
         return line;
     }
 }

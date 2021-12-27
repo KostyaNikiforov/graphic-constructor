@@ -6,6 +6,7 @@ import core.service.scene.structure.pick.CirclePicker;
 import core.service.scene.structure.pick.LinePicker;
 import core.service.scene.structure.pick.RectPicker;
 import core.service.scene.structure.pick.StructurePicker;
+import core.service.scene.structure.pick.TextPicker;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +19,7 @@ public class PickStrategyImpl implements PickStrategy {
         pickerMap.put(StructureType.LINE, new LinePicker());
         pickerMap.put(StructureType.RECT, new RectPicker());
         pickerMap.put(StructureType.CIRCLE, new CirclePicker());
+        pickerMap.put(StructureType.TEXT, new TextPicker());
     }
 
     @Override

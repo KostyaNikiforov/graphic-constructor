@@ -1,11 +1,16 @@
 package core.service.scene.structure.create;
 
+import core.App;
+import core.model.Text;
+import core.utils.MathFunctions;
 import java.awt.Point;
-import core.model.Structure;
 
 public class TextCreator implements StructureCreator {
     @Override
-    public Structure create(Point startPosition, Point endPosition) {
-        return null;
+    public Text create(Point startPosition, Point endPosition) {
+        Point centerPosition = MathFunctions.getCenterPosition(startPosition, endPosition);
+        Text text = new Text(centerPosition, startPosition, endPosition);
+        text.setColor(App.getSession().getProperties().getCurrentColor());
+        return text;
     }
 }

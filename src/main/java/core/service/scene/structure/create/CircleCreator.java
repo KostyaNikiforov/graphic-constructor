@@ -13,7 +13,7 @@ public class CircleCreator implements StructureCreator {
                 endPosition
         );
         circle.setColor(App.getSession().getProperties().getCurrentColor());
-        circle.setStroke(App.getSession().getProperties().getCurrentStroke());
+        circle.setStrokeWidth(App.getSession().getProperties().getCurrentStrokeWidth());
         return circle;
     }
 }

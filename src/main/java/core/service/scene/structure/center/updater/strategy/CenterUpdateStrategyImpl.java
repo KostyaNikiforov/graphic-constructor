@@ -7,6 +7,7 @@ import core.service.scene.structure.center.updater.CenterPointUpdater;
 import core.service.scene.structure.center.updater.CircleCenterUpdater;
 import core.service.scene.structure.center.updater.LineCenterUpdater;
 import core.service.scene.structure.center.updater.RectCenterUpdater;
+import core.service.scene.structure.center.updater.TextCenterUpdater;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,6 +20,7 @@ public class CenterUpdateStrategyImpl implements CenterUpdateStrategy {
         centerPointUpdaterMap.put(StructureType.CIRCLE, new CircleCenterUpdater());
         centerPointUpdaterMap.put(StructureType.RECT, new RectCenterUpdater());
         centerPointUpdaterMap.put(StructureType.LINE, new LineCenterUpdater());
+        centerPointUpdaterMap.put(StructureType.TEXT, new TextCenterUpdater());
     }
 
     @Override

@@ -39,7 +39,7 @@ public class Properties {
         this.currentColor = currentColor;
     }
 
-    public int getCurrentStroke() {
+    public int getCurrentStrokeWidth() {
         return currentStroke;
     }
 

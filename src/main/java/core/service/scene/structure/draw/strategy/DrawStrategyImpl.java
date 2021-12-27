@@ -8,6 +8,7 @@ import core.service.scene.structure.draw.LineDrawer;
 import core.service.scene.structure.draw.RectDrawer;
 import core.service.scene.structure.draw.RelativeStructureDrawer;
 import core.service.scene.structure.draw.StructureDrawer;
+import core.service.scene.structure.draw.TextDrawer;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,6 +21,7 @@ public class DrawStrategyImpl implements DrawStrategy, RelativeDrawStrategy {
         drawerMap.put(StructureType.CIRCLE, new CircleDrawer());
         drawerMap.put(StructureType.RECT, new RectDrawer());
         drawerMap.put(StructureType.LINE, new LineDrawer());
+        drawerMap.put(StructureType.TEXT, new TextDrawer());
     }
 
     @Override

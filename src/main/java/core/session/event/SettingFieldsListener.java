@@ -13,7 +13,7 @@ public class SettingFieldsListener implements TextListener {
         TextField textField = (TextField) textEvent.getSource();
         Structure structure = App.getSession().getProperties().getChosenStructure();
         String text = textField.getText();
-        if (!text.equals("") && structure != null && text.matches("\\d+")) {
+        if (!text.equals("") && structure != null) {
             Config.STRUCTURE_SETTING_CONTROLLER_MAP
                     .getOrDefault(textField.getName(), System.out::println).apply(text);
         }

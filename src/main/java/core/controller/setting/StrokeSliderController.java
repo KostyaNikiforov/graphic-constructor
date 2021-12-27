@@ -11,7 +11,7 @@ public class StrokeSliderController implements SliderController {
                 .setCurrentStroke(value);
         Structure structure = App.getSession().getProperties().getChosenStructure();
         if (structure != null) {
-            structure.setStroke(value);
+            structure.setStrokeWidth(value);
         }
         App.getSession().getSceneControl().update();
     }

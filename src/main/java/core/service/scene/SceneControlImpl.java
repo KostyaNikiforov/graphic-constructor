@@ -1,16 +1,10 @@
 package core.service.scene;
 
-import static core.service.scene.structure.control.StructureChooser.structureToSettingComponents;
-
 import core.App;
 import core.model.Scene;
 import core.model.Structure;
-import core.service.scene.history.History;
-import core.service.scene.history.HistoryImpl;
-import core.service.scene.structure.StructureContainer;
 import core.session.enums.CreatingMode;
 import core.utils.sys.Machine;
-import java.awt.Color;
 import java.awt.Point;
 
 public class SceneControlImpl implements SceneControl {
@@ -59,10 +53,8 @@ public class SceneControlImpl implements SceneControl {
     @Override
     public void createNewStructure(Point startPoint, Point endPoint) {
         CreatingMode creatingMode = App.getSession().getProperties().getCreatingMode();
-        Color currentColor = App.getSession().getProperties().getCurrentColor();
         Structure structure = scene.getStructureCreateStrategy().getStructureCreator(creatingMode)
                 .create(startPoint, endPoint);
-        structure.setColor(currentColor);
         scene.getStructureContainer().add(structure);
     }
 }

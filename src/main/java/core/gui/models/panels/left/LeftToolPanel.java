@@ -7,14 +7,8 @@ import core.session.enums.CreatingMode;
 import core.session.event.PanelButtonActionHandler;
 import java.awt.Color;
 import java.awt.Component;
-import java.util.ArrayList;
-import java.util.Enumeration;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import javax.lang.model.element.Element;
-import javax.swing.AbstractButton;
-import javax.swing.ButtonGroup;
 import javax.swing.JToggleButton;
 import javax.swing.JToolBar;
 import javax.swing.border.BevelBorder;
@@ -43,11 +37,9 @@ public class LeftToolPanel extends JToolBar implements ElementsGroup {
             button.addActionListener(buttonActionHandler);
             panelControllerMap.put(leftPanelButton.getCommand(), leftPanelButton.getController());
             addButton(button);
-
         }
         setBackground(Config.LEFT_PANEL_BG_COLOR);
     }
-
 
     private void addButton(JToggleButton button) {
         add(button);

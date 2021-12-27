@@ -2,7 +2,6 @@ package core.gui.models.panels.right;
 
 import core.App;
 import core.Config;
-import core.session.enums.CreatingMode;
 import core.utils.sys.Machine;
 import java.awt.Color;
 import java.awt.GridLayout;

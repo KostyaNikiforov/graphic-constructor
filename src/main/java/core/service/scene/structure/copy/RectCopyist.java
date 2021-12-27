@@ -20,7 +20,7 @@ public class RectCopyist implements StructureCopyist {
                 new Point(endPoint.x + shift, endPoint.y + shift)
         );
         rect.setColor(structure.getColor());
-        rect.setStroke(structure.getStroke());
+        rect.setStrokeWidth(structure.getStrokeWidth());
         return rect;
     }
 }

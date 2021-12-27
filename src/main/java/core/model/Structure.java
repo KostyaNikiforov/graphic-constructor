@@ -9,7 +9,7 @@ import java.util.Map;
 public abstract class Structure implements Searchable, Cloneable {
     protected Point centerPosition;
     protected Color color;
-    protected int stroke;
+    protected int strokeWidth;
     protected final Map<String, Point> relativePoints;
     private final StructureType type;
 
@@ -27,12 +27,12 @@ public abstract class Structure implements Searchable, Cloneable {
         this.centerPosition = centerPosition;
     }
 
-    public int getStroke() {
-        return stroke;
+    public int getStrokeWidth() {
+        return strokeWidth;
     }
 
-    public void setStroke(int stroke) {
-        this.stroke = stroke;
+    public void setStrokeWidth(int width) {
+        this.strokeWidth = width;
     }
 
     public Color getColor() {
