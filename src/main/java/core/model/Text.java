@@ -2,12 +2,12 @@ package core.model;
 
 import core.Config;
 import core.model.type.StructureType;
+import core.service.scene.structure.center.updater.RectCenterUpdater;
 import java.awt.Font;
 import java.awt.Point;
 
 public class Text extends Structure {
     private String content;
-    private int size;
 
     public Text(Point centerPosition, Point startPoint, Point endPoint) {
         super(centerPosition, StructureType.TEXT);
@@ -17,11 +17,13 @@ public class Text extends Structure {
     }
 
     public int getSize() {
-        return Math.abs(relativePoints.get("end").y - (relativePoints.get("start").y));
+        return Math.max(relativePoints.get("end").y - (relativePoints.get("start").y), 0);
     }
 
-    public void setSize() {
-        // TODO
+    public void setSize(int size) {
+        Point start = relativePoints.get("start");
+        relativePoints.get("end").setLocation(relativePoints.get("end").x, start.y + size);
+        new RectCenterUpdater().update(this);
     }
 
     public String getContent() {

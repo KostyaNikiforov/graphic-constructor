@@ -70,7 +70,7 @@ public class Config {
     public static final int RELATIVE_POINTS_VISIBILITY_RADIUS = 15;
     public static final int CLONE_SHIFT_DISTANCE = 25;
     public static final BasicStroke BASIC_STROKE
-            = new BasicStroke(2, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL,
+            = new BasicStroke(2, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,
             0, new float[]{9}, 0);
     public static final Map<CreatingMode, StructureCreator> STRUCTURE_CREATOR_MAP
             = new HashMap<>();

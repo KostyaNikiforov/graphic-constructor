@@ -25,11 +25,7 @@ public class TextDrawer implements StructureDrawer, RelativeStructureDrawer {
         initGraphic(g, text);
         g.setFont(text.getFont());
         Point endPoint = text.getRelativePoints().get("end");
-        if (startPoint.y >= endPoint.y) {
-            g.drawString(text.getContent(), startPoint.x, startPoint.y);
-        } else {
-            g.drawString(text.getContent(), startPoint.x,
-                    startPoint.y + (endPoint.y - startPoint.y));
-        }
+        g.drawString(text.getContent(), startPoint.x,
+                startPoint.y + (endPoint.y - startPoint.y));
     }
 }

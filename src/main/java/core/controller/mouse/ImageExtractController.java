@@ -13,7 +13,7 @@ public class ImageExtractController implements MouseController {
     @Override
     public void apply(Point point) {
         Session session = App.getSession();
-        session.getSceneControl().getScene().getDrawer().drawHighlightingRect(
+        session.getSceneControl().getScene().getDrawer().drawExtractingRect(
                 App.getSession().getProperties().getStartPoint(),
                 point
         );
