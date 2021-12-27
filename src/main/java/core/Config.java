@@ -30,6 +30,7 @@ import core.controller.setting.HeightController;
 import core.controller.setting.RadiusController;
 import core.controller.setting.StrokeController;
 import core.controller.setting.TextContentController;
+import core.controller.setting.TextSizeContentController;
 import core.controller.setting.WidthController;
 import core.controller.setting.XController;
 import core.controller.setting.YController;
@@ -147,6 +148,7 @@ public class Config {
         STRUCTURE_SETTING_CONTROLLER_MAP.put("Y", new YController());
         STRUCTURE_SETTING_CONTROLLER_MAP.put("Stroke", new StrokeController());
         STRUCTURE_SETTING_CONTROLLER_MAP.put("Text", new TextContentController());
+        STRUCTURE_SETTING_CONTROLLER_MAP.put("Size", new TextSizeContentController());
     }
 
     private static void fillUpMouseControllerMap() {

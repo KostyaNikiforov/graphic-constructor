@@ -9,6 +9,7 @@ import core.service.scene.structure.copy.RectCopyist;
 import core.service.scene.structure.copy.StructureCopyist;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 
 @Service
 public class StructureCopyStrategyImpl implements StructureCopyStrategy {
@@ -25,6 +26,7 @@ public class StructureCopyStrategyImpl implements StructureCopyStrategy {
     public StructureCopyist getStructureCopyist(StructureType structureType) {
         StructureCopyist structureCopyist = structureCopyistMap.get(structureType);
         if (structureCopyist == null) {
+            JOptionPane.showMessageDialog(null, "You can't copy this element.");
             throw new NoRealisationException("Cannot find StructureCopyist for: " + structureType);
         }
         return structureCopyist;

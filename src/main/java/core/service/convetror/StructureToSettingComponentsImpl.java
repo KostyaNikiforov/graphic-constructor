@@ -1,6 +1,7 @@
 package core.service.convetror;
 
 import core.model.Circle;
+import core.model.Line;
 import core.model.Rect;
 import core.model.Structure;
 import core.model.Text;
@@ -23,18 +24,22 @@ public class StructureToSettingComponentsImpl implements StructureToSettingCompo
         components.add(valuesToSettingComponent("Type", type));
         components.add(valuesToSettingComponent("X", structure.getCenterPosition().x));
         components.add(valuesToSettingComponent("Y", structure.getCenterPosition().y));
-        components.add(valuesToSettingComponent("Stroke", structure.getStrokeWidth()));
         // TODO: Needs refactor
         if (structure instanceof Rect) {
             Rect rect = (Rect) structure;
+            components.add(valuesToSettingComponent("Stroke", structure.getStrokeWidth()));
             components.add(valuesToSettingComponent("Width", rect.getWidth()));
             components.add(valuesToSettingComponent("Height", rect.getHeight()));
         } else if (structure instanceof Circle) {
             Circle circle = (Circle) structure;
+            components.add(valuesToSettingComponent("Stroke", structure.getStrokeWidth()));
             components.add(valuesToSettingComponent("Radius", circle.getRadius()));
         } else if (structure instanceof Text) {
             Text text = (Text) structure;
             components.add(valuesToSettingComponent("Text", text.getContent()));
+            components.add(valuesToSettingComponent("Size", text.getSize()));
+        } else if (structure instanceof Line) {
+            components.add(valuesToSettingComponent("Stroke", structure.getStrokeWidth()));
         }
         return components;
     }
