@@ -31,6 +31,7 @@ public class MouseMotionHandler implements java.awt.event.MouseMotionListener {
         CreatingMode creatingMode = App.getSession().getProperties().getCreatingMode();
         Point point = mouseEvent.getPoint();
         switch (creatingMode) {
+            case PICTURE:
             case HIGHLIGHTING:
                 highlightingController.apply(point);
                 break;

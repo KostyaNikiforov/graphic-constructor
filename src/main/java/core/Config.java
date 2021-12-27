@@ -20,8 +20,10 @@ import core.controller.mouse.RightReleaseController;
 import core.controller.panel.CircleModeController;
 import core.controller.panel.HighlightModeController;
 import core.controller.panel.ImageExtractModeController;
+import core.controller.panel.LayerModeController;
 import core.controller.panel.LineModeButton;
 import core.controller.panel.MoveModeController;
+import core.controller.panel.PictureModeController;
 import core.controller.panel.RectModeController;
 import core.controller.panel.TextModeController;
 import core.controller.setting.HeightController;
@@ -110,8 +112,14 @@ public class Config {
                     new ImageIcon("src/main/resources/icons/rect_icon_25x25.png"),
                     CreatingMode.RECT.toString(), new RectModeController()),
             new LeftPanelButton(
-                    "T",
-                    CreatingMode.TEXT.toString(), new TextModeController())
+                    new ImageIcon("src/main/resources/icons/text_icon_25x25.png"),
+                    CreatingMode.TEXT.toString(), new TextModeController()),
+            new LeftPanelButton(
+                    new ImageIcon("src/main/resources/icons/layer_icon_25x25.png"),
+                    CreatingMode.LAYER.toString(), new LayerModeController()),
+            new LeftPanelButton(
+                    new ImageIcon("src/main/resources/icons/picture_icon_25x25.png"),
+                    CreatingMode.PICTURE.toString(), new PictureModeController())
     };
 
     public static final ColorButton[] COLOR_BUTTONS = new ColorButton[] {

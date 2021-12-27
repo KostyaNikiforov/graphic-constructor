@@ -51,10 +51,11 @@ public class SceneControlImpl implements SceneControl {
     }
 
     @Override
-    public void createNewStructure(Point startPoint, Point endPoint) {
+    public Structure createNewStructure(Point startPoint, Point endPoint) {
         CreatingMode creatingMode = App.getSession().getProperties().getCreatingMode();
         Structure structure = scene.getStructureCreateStrategy().getStructureCreator(creatingMode)
                 .create(startPoint, endPoint);
         scene.getStructureContainer().add(structure);
+        return structure;
     }
 }

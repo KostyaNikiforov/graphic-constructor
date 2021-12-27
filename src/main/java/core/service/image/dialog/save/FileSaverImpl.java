@@ -1,4 +1,4 @@
-package core.service.image.create.save.dialog;
+package core.service.image.dialog.save;
 
 import core.App;
 import core.lib.Service;

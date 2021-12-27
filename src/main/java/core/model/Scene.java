@@ -18,14 +18,12 @@ public class Scene {
     private final StructureCreateStrategy structureCreateStrategy;
     private final SceneCanvas sceneCanvas;
     private final Drawer drawer;
-    private final Layer layer;
 
     public Scene(SceneCanvas sceneCanvas) {
         this.sceneCanvas = sceneCanvas;
         structureCreateStrategy = new StructureCreateStrategyImpl();
         drawer
                 = new Drawer(sceneCanvas, structureCreateStrategy);
-        layer = new Layer(0, 0, 700, 500); // DEFAULT VALUES
         history = new HistoryImpl();
     }
 
@@ -47,10 +45,6 @@ public class Scene {
 
     public StructureContainer getStructureContainer() {
         return structureControl.getStructureContainer();
-    }
-
-    public Layer getLayer() {
-        return layer;
     }
 
     public void moveToLastVersion() {

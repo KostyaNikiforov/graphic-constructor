@@ -3,7 +3,7 @@ package core.service.processe;
 import core.App;
 import core.Config;
 import core.service.image.create.ImageCreator;
-import core.service.image.create.save.dialog.FileSaver;
+import core.service.image.dialog.save.FileSaver;
 import java.awt.Point;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;

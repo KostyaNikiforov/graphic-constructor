@@ -1,55 +1,11 @@
 package core.model;
 
-public class Layer {
-    private int startX;
-    private int startY;
-    private int endX;
-    private int endY;
+import core.model.type.StructureType;
+import java.awt.Point;
 
-    public Layer(int startX, int startY, int endX, int endY) {
-        this.startX = startX;
-        this.startY = startY;
-        this.endX = endX;
-        this.endY = endY;
-    }
-
-    public int getStartX() {
-        return startX;
-    }
-
-    public void setStartX(int startX) {
-        this.startX = startX;
-    }
-
-    public int getStartY() {
-        return startY;
-    }
-
-    public void setStartY(int startY) {
-        this.startY = startY;
-    }
-
-    public int getEndX() {
-        return endX;
-    }
-
-    public void setEndX(int endX) {
-        this.endX = endX;
-    }
-
-    public int getEndY() {
-        return endY;
-    }
-
-    public void setEndY(int endY) {
-        this.endY = endY;
-    }
-
-    public int getWidth() {
-        return endX - startX;
-    }
-
-    public int getHeight() {
-        return endY - startY;
+public class Layer extends Rect {
+    public Layer(Point centerPosition, Point startPoint, Point endPoint) {
+        super(centerPosition, startPoint, endPoint);
+        setType(StructureType.LAYER);
     }
 }

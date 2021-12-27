@@ -4,7 +4,9 @@ import core.lib.Service;
 import core.model.type.StructureType;
 import core.service.scene.structure.draw.AbstractDrawer;
 import core.service.scene.structure.draw.CircleDrawer;
+import core.service.scene.structure.draw.LayerDrawer;
 import core.service.scene.structure.draw.LineDrawer;
+import core.service.scene.structure.draw.PictureDrawer;
 import core.service.scene.structure.draw.RectDrawer;
 import core.service.scene.structure.draw.RelativeStructureDrawer;
 import core.service.scene.structure.draw.StructureDrawer;
@@ -22,6 +24,8 @@ public class DrawStrategyImpl implements DrawStrategy, RelativeDrawStrategy {
         drawerMap.put(StructureType.RECT, new RectDrawer());
         drawerMap.put(StructureType.LINE, new LineDrawer());
         drawerMap.put(StructureType.TEXT, new TextDrawer());
+        drawerMap.put(StructureType.LAYER, new LayerDrawer());
+        drawerMap.put(StructureType.PICTURE, new PictureDrawer());
     }
 
     @Override

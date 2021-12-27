@@ -7,11 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Structure implements Searchable, Cloneable {
+    protected final Map<String, Point> relativePoints;
     protected Point centerPosition;
     protected Color color;
     protected int strokeWidth;
-    protected final Map<String, Point> relativePoints;
-    private final StructureType type;
+    private StructureType type;
 
     public Structure(Point centerPosition, StructureType type) {
         relativePoints = new HashMap<>();
@@ -45,6 +45,10 @@ public abstract class Structure implements Searchable, Cloneable {
 
     public StructureType getType() {
         return type;
+    }
+
+    protected void setType(StructureType type) {
+        this.type = type;
     }
 
     public Map<String, Point> getRelativePoints() {

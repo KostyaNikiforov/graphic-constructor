@@ -1,6 +1,7 @@
 package core.service.scene;
 
 import core.model.Scene;
+import core.model.Structure;
 import java.awt.Point;
 
 public interface SceneControl {
@@ -14,5 +15,5 @@ public interface SceneControl {
 
     Scene getScene();
 
-    void createNewStructure(Point startPoint, Point endPoint);
+    Structure createNewStructure(Point startPoint, Point endPoint);
 }

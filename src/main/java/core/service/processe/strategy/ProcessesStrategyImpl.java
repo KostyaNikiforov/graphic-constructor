@@ -3,6 +3,7 @@ package core.service.processe.strategy;
 import core.lib.Service;
 import core.service.processe.DefaultProcessHandler;
 import core.service.processe.ImageExtracting;
+import core.service.processe.PictureCreating;
 import core.service.processe.ProcessHandler;
 import core.service.processe.StructureCreating;
 import core.session.enums.CreatingMode;
@@ -21,6 +22,8 @@ public class ProcessesStrategyImpl implements ProcessesStrategy {
         map.put(CreatingMode.RECT, structureCreating);
         map.put(CreatingMode.LINE, structureCreating);
         map.put(CreatingMode.TEXT, structureCreating);
+        map.put(CreatingMode.LAYER, structureCreating);
+        map.put(CreatingMode.PICTURE, new PictureCreating());
         map.put(CreatingMode.IMAGE_EXTRACT, new ImageExtracting());
 
     }

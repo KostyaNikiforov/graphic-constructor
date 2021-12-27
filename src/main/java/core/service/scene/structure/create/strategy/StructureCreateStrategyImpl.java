@@ -3,7 +3,9 @@ package core.service.scene.structure.create.strategy;
 import core.lib.Service;
 import core.service.exception.NoRealisationException;
 import core.service.scene.structure.create.CircleCreator;
+import core.service.scene.structure.create.LayerCreator;
 import core.service.scene.structure.create.LineCreator;
+import core.service.scene.structure.create.PictureCreator;
 import core.service.scene.structure.create.RectCreator;
 import core.service.scene.structure.create.StructureCreator;
 import core.service.scene.structure.create.TextCreator;
@@ -21,6 +23,8 @@ public class StructureCreateStrategyImpl implements StructureCreateStrategy {
         structureCreatorMap.put(CreatingMode.LINE, new LineCreator());
         structureCreatorMap.put(CreatingMode.RECT, new RectCreator());
         structureCreatorMap.put(CreatingMode.TEXT, new TextCreator());
+        structureCreatorMap.put(CreatingMode.PICTURE, new PictureCreator());
+        structureCreatorMap.put(CreatingMode.LAYER, new LayerCreator());
     }
 
     @Override

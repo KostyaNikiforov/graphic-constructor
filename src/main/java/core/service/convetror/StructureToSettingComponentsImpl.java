@@ -25,14 +25,14 @@ public class StructureToSettingComponentsImpl implements StructureToSettingCompo
         components.add(valuesToSettingComponent("Y", structure.getCenterPosition().y));
         components.add(valuesToSettingComponent("Stroke", structure.getStrokeWidth()));
         // TODO: Needs refactor
-        if (type.equals("Rect")) {
+        if (structure instanceof Rect) {
             Rect rect = (Rect) structure;
             components.add(valuesToSettingComponent("Width", rect.getWidth()));
             components.add(valuesToSettingComponent("Height", rect.getHeight()));
-        } else if (type.equals("Circle")) {
+        } else if (structure instanceof Circle) {
             Circle circle = (Circle) structure;
             components.add(valuesToSettingComponent("Radius", circle.getRadius()));
-        } else if (type.equals("Text")) {
+        } else if (structure instanceof Text) {
             Text text = (Text) structure;
             components.add(valuesToSettingComponent("Text", text.getContent()));
         }
