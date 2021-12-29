@@ -9,22 +9,22 @@ With the ability to manipulate and change their properties.
 ![interface](readme.images/GIF-211229_162157.gif)
 
 # Main functionality
-> #### Creating
-> + All you need to add a new element to the scene is to select the tool in the left panel 
++ >#### Creating 
+  > All you need to add a new element to the scene is to select the tool in the left panel 
 and start dragging the left mouse button from the top left point to the bottom right.
 
-> #### Modifying
-> + To modify the created element, double-click on its center, after which the main points 
-of manipulation will be highlighted with white squares.
++ > #### Modifying
+  > To modify the created element, double-click on its center, after which the main points 
+  > of manipulation will be highlighted with white squares.
 
-> #### Removing
-> + To remove an element, double-click on its center with the right mouse button.
++ > #### Removing
+   > To remove an element, double-click on its center with the right mouse button.
 
-> #### Coping
-> + To copy the selected element, click once with the central mouse button on its center.
++ > #### Coping
+  > To copy the selected element, click once with the central mouse button on its center.
 
-> #### Output
-> + To save the created image, highlight the area of the scene you are interested 
++ > #### Output
+  >To save the created image, highlight the area of the scene you are interested 
 in using the tool with the camera icon.
 
 # Implementation specifics
