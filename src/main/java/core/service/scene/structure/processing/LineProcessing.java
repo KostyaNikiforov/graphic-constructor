@@ -19,7 +19,7 @@ public class LineProcessing implements StructureProcessing<Line> {
                 startPosition,
                 endPosition
         );
-        line.setColor(App.getSession().getProperties().getCurrentColor());
+        line.setColor(line.getColor());
         line.setStrokeWidth(App.getSession().getProperties().getCurrentStrokeWidth());
         return line;
     }

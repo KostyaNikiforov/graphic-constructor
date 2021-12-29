@@ -20,7 +20,7 @@ public class RectProcessing implements StructureProcessing<Rect> {
                 startPosition,
                 endPosition
         );
-        rect.setColor(App.getSession().getProperties().getCurrentColor());
+        rect.setColor(rect.getColor());
         rect.setStrokeWidth(App.getSession().getProperties().getCurrentStrokeWidth());
         return rect;
     }

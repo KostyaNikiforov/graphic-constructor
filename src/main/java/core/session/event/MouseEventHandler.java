@@ -1,9 +1,14 @@
 package core.session.event;
 
-import core.Config;
 import core.controller.MouseController;
+import core.controller.mouse.LeftDoubleClickController;
+import core.controller.mouse.MiddleClickController;
+import core.controller.mouse.RightDoubleClickController;
+import core.controller.mouse.RightPressController;
+import core.controller.mouse.RightReleaseController;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.HashMap;
 import java.util.Map;
 
 public class MouseEventHandler implements MouseListener {
@@ -13,7 +18,12 @@ public class MouseEventHandler implements MouseListener {
     private final Map<String, MouseController> controllerMap;
 
     {
-        controllerMap = Config.MOUSE_CONTROLLER_MAP;
+        controllerMap = new HashMap<>();
+        controllerMap.put("left_double_click", new LeftDoubleClickController());
+        controllerMap.put("right_double_click", new RightDoubleClickController());
+        controllerMap.put("right_press", new RightPressController());
+        controllerMap.put("right_release", new RightReleaseController());
+        controllerMap.put("middle_click", new MiddleClickController());
     }
 
     @Override

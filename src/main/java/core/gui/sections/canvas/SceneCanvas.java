@@ -51,8 +51,8 @@ public class SceneCanvas extends Canvas implements ElementsGroup {
     }
 
     private void pickUpStructure(Structure structure, Graphics2D graphics2D) {
-        graphics2D.setColor(Color.WHITE);
-        graphics2D.setStroke(new BasicStroke(1));
-        pickStrategy.getStructurePicker(structure.getCreatingMode()).pickUp(structure, graphics2D);
+
+        pickStrategy.getStructurePicker(structure.getCreatingMode())
+                .pickUp(structure, graphics2D);
     }
 }

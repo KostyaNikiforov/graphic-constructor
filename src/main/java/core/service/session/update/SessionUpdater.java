@@ -8,10 +8,6 @@ import java.awt.Color;
 
 @Service
 public class SessionUpdater implements StructureUpdater {
-    public void updateCurrentSessionColor(Color color) {
-        App.getSession().getProperties().setCurrentColor(color);
-    }
-
     public void updateChosenStructureColor(Color color) {
         Session session = App.getSession();
         Structure chosenStructure = session.getProperties().getChosenStructure();

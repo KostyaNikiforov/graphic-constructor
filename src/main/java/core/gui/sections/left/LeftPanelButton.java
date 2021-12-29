@@ -12,14 +12,14 @@ public class LeftPanelButton extends PanelButton {
         super(command, controller);
     }
 
-    public LeftPanelButton(String text, String command, Controller controller) {
+    public LeftPanelButton(String content, String command, Controller controller) {
         this(command, controller);
-        this.text = text;
+        this.text = content;
     }
 
-    public LeftPanelButton(Icon icon, String command, Controller controller) {
+    public LeftPanelButton(Icon content, String command, Controller controller) {
         this(command, controller);
-        this.icon = icon;
+        this.icon = content;
     }
 
     public String getText() {

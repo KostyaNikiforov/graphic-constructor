@@ -7,16 +7,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 public abstract class Structure implements Searchable, Cloneable {
+    public static final Color DEFAULT_COLOR = Color.BLACK;
     protected final Map<String, Point> relativePoints;
     protected Point centerPosition;
     protected Color color;
     protected int strokeWidth;
     private CreatingMode creatingMode;
 
-    public Structure(Point centerPosition, CreatingMode type) {
+    public Structure(Point centerPosition, CreatingMode creatingMode) {
+        this(centerPosition, creatingMode, DEFAULT_COLOR);
+    }
+
+    public Structure(Point centerPosition, CreatingMode creatingMode, Color defaultColor) {
         relativePoints = new HashMap<>();
+        this.color = defaultColor;
         this.centerPosition = centerPosition;
-        this.creatingMode = type;
+        this.creatingMode = creatingMode;
     }
 
     public Point getCenterPosition() {

@@ -17,7 +17,7 @@ public class CircleProcessing implements StructureProcessing<Circle> {
                 startPosition,
                 endPosition
         );
-        circle.setColor(App.getSession().getProperties().getCurrentColor());
+        circle.setColor(circle.getColor());
         circle.setStrokeWidth(App.getSession().getProperties().getCurrentStrokeWidth());
         return circle;
     }

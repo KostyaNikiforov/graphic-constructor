@@ -15,16 +15,21 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class StructureToSettingComponentsImpl implements StructureToSettingComponents {
-    private final TextListener textListener = new SettingFieldsListener();
+    private final TextListener textListener;
+
+    public StructureToSettingComponentsImpl() {
+        textListener = new SettingFieldsListener();
+    }
 
     @Override
     public List<JPanel> convert(Structure structure) {
         List<JPanel> components = new ArrayList<>();
         String type = structure.getCreatingMode().toString();
+
+        // TODO: Needs refactor
         components.add(valuesToSettingComponent("Type", type));
         components.add(valuesToSettingComponent("X", structure.getCenterPosition().x));
         components.add(valuesToSettingComponent("Y", structure.getCenterPosition().y));
-        // TODO: Needs refactor
         if (structure instanceof Rect) {
             Rect rect = (Rect) structure;
             components.add(valuesToSettingComponent("Stroke", structure.getStrokeWidth()));

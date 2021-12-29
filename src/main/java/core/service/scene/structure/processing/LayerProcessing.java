@@ -17,7 +17,7 @@ public class LayerProcessing implements StructureProcessing<Layer> {
                 startPosition,
                 endPosition
         );
-        layer.setColor(App.getSession().getProperties().getCurrentColor());
+        layer.setColor(layer.getColor());
         layer.setStrokeWidth(App.getSession().getProperties().getCurrentStrokeWidth());
         return layer;
     }

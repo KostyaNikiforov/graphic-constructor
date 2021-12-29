@@ -4,10 +4,12 @@ import core.App;
 import core.gui.sections.right.DynamicToolsPanel;
 import core.lib.Inject;
 import core.lib.Service;
+import core.model.Layer;
 import core.model.Structure;
 import core.service.scene.structure.StructureContainer;
 import core.service.scene.structure.processing.center.update.CenterUpdateStrategy;
 import core.service.scene.structure.processing.strategy.StructureProcessingStrategy;
+import core.service.scene.structure.processing.strategy.StructureProcessingStrategyImpl;
 import core.session.Properties;
 import core.session.Session;
 import core.session.enums.CreatingMode;
@@ -21,8 +23,7 @@ import java.util.Optional;
 public class StructureControlImpl implements StructureControl {
     @Inject
     private StructureContainer structureContainer;
-    private final CenterUpdateStrategy centerUpdateStrategy
-            = (CenterUpdateStrategy) App.injector.getInstance(StructureProcessingStrategy.class);
+    private final CenterUpdateStrategy centerUpdateStrategy = new StructureProcessingStrategyImpl();
 
     @Override
     public Optional<Structure> findStructureOnPosition(Point position) {
@@ -108,12 +109,14 @@ public class StructureControlImpl implements StructureControl {
         dynamicToolsPanel.fillUp(structureToSettingComponents.convert(structure));
         dynamicToolsPanel.open();
         session.getSceneControl().update();
-        //raiseStructureInContainer(structure);
+        raiseStructureInContainerExceptLayer(structure);
     }
 
-    private void raiseStructureInContainer(Structure structure) {
-        List<Structure> allStructures = structureContainer.getAllStructures();
-        allStructures.remove(structure);
-        allStructures.add(structure);
+    private void raiseStructureInContainerExceptLayer(Structure structure) {
+        if (!structure.getClass().equals(Layer.class)) {
+            List<Structure> allStructures = structureContainer.getAllStructures();
+            allStructures.remove(structure);
+            allStructures.add(structure);
+        }
     }
 }

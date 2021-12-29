@@ -12,7 +12,6 @@ public class DarkGreyController implements Controller {
     @Override
     public void apply() {
         Color color = Color.DARK_GRAY;
-        App.getSession().getProperties().setCurrentColor(color);
         structureUpdater.updateChosenStructureColor(color);
     }
 }

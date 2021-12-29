@@ -1,6 +1,8 @@
 package core.service.scene.structure.processing.pick;
 
 import core.model.Structure;
+import java.awt.BasicStroke;
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Point;
 import java.util.Map;
@@ -9,6 +11,8 @@ public interface StructurePicker<T extends Structure> {
     int squareSideSize = 6;
 
     default void pickUp(T t, Graphics2D graphics2D) {
+        graphics2D.setColor(Color.RED);
+        graphics2D.setStroke(new BasicStroke(2));
         drawPickSquare(t, graphics2D);
     }
 

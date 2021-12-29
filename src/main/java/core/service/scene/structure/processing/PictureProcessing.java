@@ -18,7 +18,6 @@ public class PictureProcessing implements StructureProcessing<Picture> {
                 startPosition,
                 endPosition
         );
-        picture.setColor(App.getSession().getProperties().getCurrentColor());
         picture.setStrokeWidth(App.getSession().getProperties().getCurrentStrokeWidth());
         return picture;
     }

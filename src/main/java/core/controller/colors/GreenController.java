@@ -12,7 +12,6 @@ public class GreenController implements Controller {
     @Override
     public void apply() {
         Color color = Color.GREEN;
-        App.getSession().getProperties().setCurrentColor(color);
         structureUpdater.updateChosenStructureColor(color);
     }
 }

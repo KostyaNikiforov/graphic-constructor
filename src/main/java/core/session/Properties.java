@@ -9,14 +9,12 @@ import java.awt.Point;
 
 public class Properties {
     private CreatingMode creatingMode;
-    private Color currentColor;
     private int currentStroke;
     private Structure chosenStructure;
     private Point startPoint;
 
     {
         creatingMode = Config.DEFAULT_CREATING_MODE;
-        currentColor = Config.DEFAULT_COLOR;
         currentStroke = Config.DEFAULT_STROKE;
         chosenStructure = null;
     }
@@ -29,14 +27,6 @@ public class Properties {
         this.creatingMode = creatingMode;
         App.getSession().getMainWindow()
                 .getLeftPanel().updateChosenTool(creatingMode);
-    }
-
-    public Color getCurrentColor() {
-        return currentColor;
-    }
-
-    public void setCurrentColor(Color currentColor) {
-        this.currentColor = currentColor;
     }
 
     public int getCurrentStrokeWidth() {

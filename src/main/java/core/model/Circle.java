@@ -2,6 +2,7 @@ package core.model;
 
 import core.session.enums.CreatingMode;
 import core.utils.MathFunctions;
+import java.awt.Color;
 import java.awt.Point;
 
 public class Circle extends Structure {

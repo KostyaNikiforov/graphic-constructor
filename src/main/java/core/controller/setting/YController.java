@@ -4,12 +4,13 @@ import core.App;
 import core.controller.SettingController;
 import core.model.Structure;
 import core.service.scene.structure.control.StructureControl;
+import core.service.scene.structure.control.StructureControlImpl;
 import core.service.scene.structure.control.StructurePositioner;
 import java.awt.Point;
 
 public class YController implements SettingController {
     private StructurePositioner structurePositioner
-            = (StructurePositioner) App.injector.getInstance(StructureControl.class);
+            = new StructureControlImpl();
 
     @Override
     public void apply(String text) {

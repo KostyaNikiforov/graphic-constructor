@@ -13,7 +13,7 @@ public class TextProcessing implements StructureProcessing<Text> {
     public Text create(Point startPosition, Point endPosition) {
         Point centerPosition = MathFunctions.getCenterPosition(startPosition, endPosition);
         Text text = new Text(centerPosition, startPosition, endPosition);
-        text.setColor(App.getSession().getProperties().getCurrentColor());
+        text.setColor(text.getColor());
         return text;
     }
 
