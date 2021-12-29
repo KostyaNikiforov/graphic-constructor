@@ -1,10 +1,12 @@
+![interface](readme.images/interface_screenshot.png)
+
 # Graphic constructor
 Java GUI application for creating graphical structures using simple geometric elements such as: 
 line, circle, oval, rectangle, text and pictures.
 With the ability to manipulate and change their properties.
 
 ## Interface 
-![interface](readme.images/20211228_211107.gif)
+![interface](readme.images/GIF-211229_162157.gif)
 
 # Main functionality
 > #### Creating
@@ -48,7 +50,6 @@ in using the tool with the camera icon.
 + Java 11 
 + AWT/SWING standard graphic libraries
 + Logging library Log4j2
-+ Unit testing library junit 4
 + Maven
 
 # Set up instruction
