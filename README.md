@@ -5,7 +5,6 @@ With the ability to manipulate and change their properties.
 
 ## Interface 
 ![interface](readme.images/GIF-211229_162157.gif)
-![interface](readme.images/interface_screenshot.png)
 
 # Main functionality
 + >#### Creating 
