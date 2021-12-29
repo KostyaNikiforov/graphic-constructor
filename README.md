@@ -1,5 +1,3 @@
-![interface](readme.images/interface_screenshot.png)
-
 # Graphic constructor
 Java GUI application for creating graphical structures using simple geometric elements such as: 
 line, circle, oval, rectangle, text and pictures.
@@ -7,6 +5,7 @@ With the ability to manipulate and change their properties.
 
 ## Interface 
 ![interface](readme.images/GIF-211229_162157.gif)
+![interface](readme.images/interface_screenshot.png)
 
 # Main functionality
 + >#### Creating 
