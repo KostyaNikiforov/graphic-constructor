@@ -4,7 +4,6 @@ import core.App;
 import core.Config;
 import core.model.Structure;
 import core.session.enums.CreatingMode;
-import java.awt.Color;
 import java.awt.Point;
 
 public class Properties {

@@ -8,7 +8,6 @@ import core.model.Layer;
 import core.model.Structure;
 import core.service.scene.structure.StructureContainer;
 import core.service.scene.structure.processing.center.update.CenterUpdateStrategy;
-import core.service.scene.structure.processing.strategy.StructureProcessingStrategy;
 import core.service.scene.structure.processing.strategy.StructureProcessingStrategyImpl;
 import core.session.Properties;
 import core.session.Session;

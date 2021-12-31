@@ -3,7 +3,6 @@ package core.controller.setting;
 import core.App;
 import core.controller.SettingController;
 import core.model.Structure;
-import core.service.scene.structure.control.StructureControl;
 import core.service.scene.structure.control.StructureControlImpl;
 import core.service.scene.structure.control.StructurePositioner;
 import java.awt.Point;

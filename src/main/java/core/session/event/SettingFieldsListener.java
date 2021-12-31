@@ -1,7 +1,6 @@
 package core.session.event;
 
 import core.App;
-import core.Config;
 import core.controller.SettingController;
 import core.controller.setting.HeightController;
 import core.controller.setting.RadiusController;
@@ -40,7 +39,7 @@ public class SettingFieldsListener implements TextListener {
         Structure structure = App.getSession().getProperties().getChosenStructure();
         String text = textField.getText();
         if (!text.equals("") && structure != null) {
-           controllerMap.getOrDefault(textField.getName(), System.out::println).apply(text);
+            controllerMap.getOrDefault(textField.getName(), System.out::println).apply(text);
         }
         App.getSession().getSceneControl().update();
     }

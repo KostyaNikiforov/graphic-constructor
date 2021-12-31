@@ -1,6 +1,5 @@
 package core.service.scene.structure.processing;
 
-import core.App;
 import core.lib.Service;
 import core.model.Text;
 import core.utils.MathFunctions;
